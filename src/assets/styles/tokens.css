@@ -1,0 +1,44 @@
+:root {
+  --avanti-teal: #2491aa;
+  --avanti-teal-dark: #1a7488;
+  --avanti-teal-soft: #eaf4f6;
+  --avanti-teal-border: #c7e3ea;
+  --avanti-teal-muted-border: #e2edf0;
+
+  --avanti-ink: #1a2332;
+  --avanti-muted: #71717a;
+  --avanti-muted-2: #a1a1aa;
+  --avanti-zinc-line: #d4d4d8;
+  --avanti-zinc-bg: #f4f4f5;
+  --avanti-divider: #f0f2f5;
+  --avanti-border: #e4e4e7;
+
+  --avanti-bg: #ffffff;
+  --avanti-bg-page: #f8fafb;
+  --avanti-white: #ffffff;
+
+  --avanti-danger: #ef4444;
+  --avanti-badge-dark-red: #9a0606;
+
+  --avanti-radius-sm: 8px;
+  --avanti-radius-md: 14px;
+  --avanti-radius-lg: 16px;
+  --avanti-radius-xl: 20px;
+  --avanti-radius-pill: 99px;
+  --avanti-radius-circle: 50%;
+
+  --avanti-desktop-width: 1440px;
+  --avanti-mobile-width: 390px;
+  --avanti-desktop-gutter: 72px;
+  --avanti-desktop-gap-cols: 40px;
+  --avanti-left-col: 792px;
+  --avanti-right-col: 464px;
+  --avanti-mobile-pad: 16px;
+
+  --avanti-shadow-card: 0 2px 4px rgba(26, 35, 50, 0.06);
+  --avanti-shadow-balance: 0 8px 12px rgba(36, 145, 170, 0.19);
+  --avanti-shadow-icon: 0 4px 4px rgba(36, 145, 170, 0.19);
+  --avanti-shadow-cta: 0 4px 4px rgba(36, 145, 170, 0.25);
+
+  --avanti-gradient-balance: linear-gradient(180deg, #2491aa 0%, #1a7488 100%);
+}
