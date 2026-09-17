@@ -3,10 +3,11 @@ import { computed } from 'vue'
 import iconHome from '@/assets/icons/nav-home.svg'
 import iconDocs from '@/assets/icons/nav-docs.svg'
 import iconProfile from '@/assets/icons/nav-profile.svg'
+import iconChat from '@/assets/icons/nav-chat.svg'
 import avatarUser from '@/assets/images/avatar-user.jpeg'
 import AvantiLogo from '@/components/avanti_logo.vue'
 import AvantiNavItem from '@/components/avanti_nav_item.vue'
-import AvantiAssistenzaButton from '@/components/avanti_assistenza_button.vue'
+import AvantiButton from '@/components/avanti_button.vue'
 import AvantiUserInfo from '@/components/avanti_user_info.vue'
 import AvantiBreadcrumb from '@/components/avanti_breadcrumb.vue'
 
@@ -73,8 +74,11 @@ function onAssistenzaClick() {
             />
           </nav>
         </div>
-        <AvantiAssistenzaButton
-          :badge-count="assistenzaBadge"
+        <AvantiButton
+          label="Assistenza"
+          :icon-src="iconChat"
+          :badge="assistenzaBadge"
+          uppercase
           @click="onAssistenzaClick"
         />
       </div>

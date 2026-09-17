@@ -1,42 +1,61 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import iconChat from '@/assets/icons/nav-chat.svg'
 
 type Props = {
-  label?: string
-  badgeCount?: number
+  label: string
+  iconSrc?: string
+  badge?: number | string
+  disabled?: boolean
+  uppercase?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  label: 'Assistenza',
-  badgeCount: 0,
+  disabled: false,
+  uppercase: false,
 })
 
 const emit = defineEmits<{
   click: []
 }>()
 
-const hasBadge = computed(() => props.badgeCount > 0)
+const hasBadge = computed(() => {
+  if (props.badge === undefined || props.badge === null || props.badge === '') {
+    return false
+  }
+
+  if (typeof props.badge === 'number') {
+    return props.badge > 0
+  }
+
+  return true
+})
 
 function onClick() {
+  if (props.disabled) return
   emit('click')
 }
 </script>
 
 <template>
-  <button class="avanti-assistenza" type="button" @click="onClick">
-    <span class="avanti-assistenza__icon" aria-hidden="true">
-      <img :src="iconChat" alt="" width="16" height="16" />
+  <button
+    class="avanti-button"
+    type="button"
+    :class="{ 'avanti-button--uppercase': uppercase }"
+    :disabled="disabled"
+    @click="onClick"
+  >
+    <span v-if="iconSrc" class="avanti-button__icon" aria-hidden="true">
+      <img :src="iconSrc" alt="" width="16" height="16" />
     </span>
-    <span class="avanti-assistenza__label">{{ label }}</span>
-    <span v-if="hasBadge" class="avanti-assistenza__badge" aria-hidden="true">
-      {{ badgeCount }}
+    <span class="avanti-button__label">{{ label }}</span>
+    <span v-if="hasBadge" class="avanti-button__badge" aria-hidden="true">
+      {{ badge }}
     </span>
   </button>
 </template>
 
 <style scoped>
-.avanti-assistenza {
+.avanti-button {
   position: relative;
   display: flex;
   flex-shrink: 0;
@@ -50,7 +69,12 @@ function onClick() {
   cursor: pointer;
 }
 
-.avanti-assistenza__icon {
+.avanti-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.avanti-button__icon {
   display: flex;
   flex-shrink: 0;
   align-items: center;
@@ -60,20 +84,23 @@ function onClick() {
   overflow: hidden;
 }
 
-.avanti-assistenza__icon img {
+.avanti-button__icon img {
   width: 16px;
   height: 16px;
 }
 
-.avanti-assistenza__label {
+.avanti-button__label {
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 
-.avanti-assistenza__badge {
+.avanti-button--uppercase .avanti-button__label {
+  text-transform: uppercase;
+}
+
+.avanti-button__badge {
   position: absolute;
   top: -10px;
   right: -6px;
