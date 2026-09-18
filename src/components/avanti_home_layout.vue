@@ -1,15 +1,20 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AvantiSteps from '@/components/avanti_steps.vue'
+import AvantiPersonalData from '@/components/avanti_personal_data.vue'
+</script>
 
 <template>
   <div class="avanti-home-layout">
     <div class="avanti-home-layout__left">
-      <section class="avanti-home-layout__block avanti-home-layout__block--steps" />
+      <AvantiSteps />
       <section class="avanti-home-layout__block avanti-home-layout__block--balance" />
       <section class="avanti-home-layout__block avanti-home-layout__block--banner" />
     </div>
 
     <div class="avanti-home-layout__right">
-      <section class="avanti-home-layout__block avanti-home-layout__block--personal" />
+      <div class="avanti-home-layout__personal">
+        <AvantiPersonalData />
+      </div>
       <section class="avanti-home-layout__block avanti-home-layout__block--checklist" />
     </div>
   </div>
@@ -46,13 +51,6 @@
   border-radius: var(--avanti-radius-lg);
 }
 
-.avanti-home-layout__block--steps {
-  min-height: 130px;
-  border: 1px solid var(--avanti-teal-muted-border);
-  background: var(--avanti-bg);
-  box-shadow: var(--avanti-shadow-card);
-}
-
 .avanti-home-layout__block--balance {
   min-height: 340px;
   background: var(--avanti-gradient-balance);
@@ -63,12 +61,6 @@
   min-height: 124px;
   border: 1px solid var(--avanti-teal-border);
   background: var(--avanti-teal-soft);
-}
-
-.avanti-home-layout__block--personal {
-  min-height: 131px;
-  border: 1px solid var(--avanti-border);
-  background: var(--avanti-bg);
 }
 
 .avanti-home-layout__block--checklist {
@@ -92,17 +84,12 @@
     gap: 20px;
   }
 
-  .avanti-home-layout__block--personal {
+  .avanti-home-layout__personal {
     display: none;
-  }
-
-  .avanti-home-layout__block--steps {
-    min-height: 112px;
   }
 
   .avanti-home-layout__block--balance {
     min-height: 280px;
-    border-radius: var(--avanti-radius-lg);
   }
 
   .avanti-home-layout__block--banner {
