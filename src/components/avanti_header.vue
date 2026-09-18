@@ -7,22 +7,34 @@ import iconChat from '@/assets/icons/nav-chat.svg'
 import AvantiLogo from '@/components/avanti_logo.vue'
 import AvantiNavItem from '@/components/avanti_nav_item.vue'
 import AvantiButton from '@/components/avanti_button.vue'
+import AvantiNotificationBell from '@/components/avanti_notification_bell.vue'
+import AvantiHeaderProfile from '@/components/avanti_header_profile.vue'
 
 type NavId = 'home' | 'documenti' | 'profilo'
 
 type Props = {
   activeNav?: NavId
   assistenzaBadge?: number
+  notificationBadge?: number
+  avatarSrc?: string
+  userInitials?: string
+  userName?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   activeNav: 'home',
   assistenzaBadge: 4,
+  notificationBadge: 4,
+  avatarSrc: '',
+  userInitials: 'MR',
+  userName: '',
 })
 
 const emit = defineEmits<{
   navigate: [id: NavId]
   assistenza: []
+  notifications: []
+  profile: []
 }>()
 
 const navItems = computed(() => [
@@ -42,13 +54,26 @@ function onNavClick(id: NavId) {
 function onAssistenzaClick() {
   emit('assistenza')
 }
+
+function onNotificationsClick() {
+  emit('notifications')
+}
+
+function onProfileClick() {
+  emit('profile')
+}
 </script>
 
 <template>
   <header class="avanti-header">
     <div class="avanti-header__inner">
       <div class="avanti-header__brand-nav">
-        <AvantiLogo />
+        <div class="avanti-header__logo-desktop">
+          <AvantiLogo />
+        </div>
+        <div class="avanti-header__logo-mobile">
+          <AvantiLogo compact />
+        </div>
         <nav class="avanti-header__nav" aria-label="Main">
           <AvantiNavItem
             v-for="item in navItems"
@@ -60,13 +85,30 @@ function onAssistenzaClick() {
           />
         </nav>
       </div>
-      <AvantiButton
-        label="Assistenza"
-        :icon-src="iconChat"
-        :badge="assistenzaBadge"
-        uppercase
-        @click="onAssistenzaClick"
-      />
+
+      <div class="avanti-header__assistenza">
+        <AvantiButton
+          label="Assistenza"
+          :icon-src="iconChat"
+          :badge="assistenzaBadge"
+          uppercase
+          @click="onAssistenzaClick"
+        />
+      </div>
+
+      <div class="avanti-header__mobile-actions">
+        <AvantiNotificationBell
+          :badge="notificationBadge"
+          @click="onNotificationsClick"
+        />
+        <AvantiHeaderProfile
+          v-if="avatarSrc"
+          :avatar-src="avatarSrc"
+          :initials="userInitials"
+          :name="userName"
+          @click="onProfileClick"
+        />
+      </div>
     </div>
   </header>
 </template>
@@ -98,12 +140,23 @@ function onAssistenzaClick() {
   padding: 20px 0;
 }
 
+.avanti-header__logo-mobile {
+  display: none;
+}
+
 .avanti-header__nav {
   display: flex;
   flex: 1 1 auto;
   gap: 12px;
   max-width: 660px;
   min-width: 0;
+}
+
+.avanti-header__mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 1200px) {
@@ -114,6 +167,33 @@ function onAssistenzaClick() {
 
   .avanti-header__brand-nav {
     gap: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .avanti-header__inner {
+    padding: 12px var(--avanti-mobile-pad);
+    gap: 12px;
+  }
+
+  .avanti-header__brand-nav {
+    flex: 0 1 auto;
+    gap: 0;
+    padding: 0;
+  }
+
+  .avanti-header__logo-desktop,
+  .avanti-header__nav,
+  .avanti-header__assistenza {
+    display: none;
+  }
+
+  .avanti-header__logo-mobile {
+    display: block;
+  }
+
+  .avanti-header__mobile-actions {
+    display: flex;
   }
 }
 </style>

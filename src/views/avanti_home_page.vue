@@ -9,11 +9,23 @@ type NavId = 'home' | 'documenti' | 'profilo'
 function onNavigate(_id: NavId) {}
 
 function onAssistenza() {}
+
+function onNotifications() {}
+
+function onProfile() {}
 </script>
 
 <template>
   <div class="avanti-home-page">
-    <AvantiHeader @navigate="onNavigate" @assistenza="onAssistenza" />
+    <AvantiHeader
+      :avatar-src="avatarUser"
+      user-name="Marco Rossi"
+      user-initials="MR"
+      @navigate="onNavigate"
+      @assistenza="onAssistenza"
+      @notifications="onNotifications"
+      @profile="onProfile"
+    />
     <main class="avanti-home-page__main">
       <div class="avanti-home-page__toolbar">
         <AvantiPageToolbar
