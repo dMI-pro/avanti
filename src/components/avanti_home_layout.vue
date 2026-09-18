@@ -3,6 +3,7 @@ import AvantiSteps from '@/components/avanti_steps.vue'
 import AvantiBalanceCard from '@/components/avanti_balance_card.vue'
 import AvantiProgressBanner from '@/components/avanti_progress_banner.vue'
 import AvantiPersonalData from '@/components/avanti_personal_data.vue'
+import AvantiChecklist from '@/components/avanti_checklist.vue'
 </script>
 
 <template>
@@ -17,7 +18,7 @@ import AvantiPersonalData from '@/components/avanti_personal_data.vue'
       <div class="avanti-home-layout__personal">
         <AvantiPersonalData />
       </div>
-      <section class="avanti-home-layout__block avanti-home-layout__block--checklist" />
+      <AvantiChecklist />
     </div>
   </div>
 </template>
@@ -28,7 +29,6 @@ import AvantiPersonalData from '@/components/avanti_personal_data.vue'
   align-items: flex-start;
   gap: var(--avanti-desktop-gap-cols);
   width: 100%;
-  margin-top: 20px;
   padding-bottom: 40px;
 }
 
@@ -49,18 +49,6 @@ import AvantiPersonalData from '@/components/avanti_personal_data.vue'
   width: var(--avanti-right-col);
 }
 
-.avanti-home-layout__block {
-  width: 100%;
-  border-radius: var(--avanti-radius-lg);
-}
-
-.avanti-home-layout__block--checklist {
-  min-height: 483px;
-  border: 1px solid var(--avanti-border);
-  background: var(--avanti-bg);
-  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.03);
-}
-
 @media (max-width: 1024px) {
   .avanti-home-layout {
     flex-direction: column;
@@ -77,10 +65,6 @@ import AvantiPersonalData from '@/components/avanti_personal_data.vue'
 
   .avanti-home-layout__personal {
     display: none;
-  }
-
-  .avanti-home-layout__block--checklist {
-    min-height: 420px;
   }
 }
 </style>
