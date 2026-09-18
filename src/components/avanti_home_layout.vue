@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AvantiSteps from '@/components/avanti_steps.vue'
+import AvantiBalanceCard from '@/components/avanti_balance_card.vue'
 import AvantiPersonalData from '@/components/avanti_personal_data.vue'
 </script>
 
@@ -7,7 +8,7 @@ import AvantiPersonalData from '@/components/avanti_personal_data.vue'
   <div class="avanti-home-layout">
     <div class="avanti-home-layout__left">
       <AvantiSteps />
-      <section class="avanti-home-layout__block avanti-home-layout__block--balance" />
+      <AvantiBalanceCard />
       <section class="avanti-home-layout__block avanti-home-layout__block--banner" />
     </div>
 
@@ -51,12 +52,6 @@ import AvantiPersonalData from '@/components/avanti_personal_data.vue'
   border-radius: var(--avanti-radius-lg);
 }
 
-.avanti-home-layout__block--balance {
-  min-height: 340px;
-  background: var(--avanti-gradient-balance);
-  box-shadow: var(--avanti-shadow-balance);
-}
-
 .avanti-home-layout__block--banner {
   min-height: 124px;
   border: 1px solid var(--avanti-teal-border);
@@ -86,10 +81,6 @@ import AvantiPersonalData from '@/components/avanti_personal_data.vue'
 
   .avanti-home-layout__personal {
     display: none;
-  }
-
-  .avanti-home-layout__block--balance {
-    min-height: 280px;
   }
 
   .avanti-home-layout__block--banner {
