@@ -2,6 +2,7 @@
 import avatarUser from '@/assets/images/avatar-user.jpeg'
 import AvantiHeader from '@/components/avanti_header.vue'
 import AvantiPageToolbar from '@/components/avanti_page_toolbar.vue'
+import AvantiHomeLayout from '@/components/avanti_home_layout.vue'
 
 type NavId = 'home' | 'documenti' | 'profilo'
 
@@ -14,13 +15,16 @@ function onAssistenza() {}
   <div class="avanti-home-page">
     <AvantiHeader @navigate="onNavigate" @assistenza="onAssistenza" />
     <main class="avanti-home-page__main">
-      <AvantiPageToolbar
-        user-name="Marco Rossi"
-        user-email="ikoei@09gmail.com"
-        :avatar-src="avatarUser"
-        breadcrumb-root="Piattaforma"
-        breadcrumb-current="Home"
-      />
+      <div class="avanti-home-page__toolbar">
+        <AvantiPageToolbar
+          user-name="Marco Rossi"
+          user-email="ikoei@09gmail.com"
+          :avatar-src="avatarUser"
+          breadcrumb-root="Piattaforma"
+          breadcrumb-current="Home"
+        />
+      </div>
+      <AvantiHomeLayout />
     </main>
   </div>
 </template>
@@ -47,6 +51,16 @@ function onAssistenza() {}
   .avanti-home-page__main {
     padding-left: 32px;
     padding-right: 32px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .avanti-home-page__toolbar {
+    display: none;
+  }
+
+  .avanti-home-page__main {
+    padding: 16px var(--avanti-mobile-pad) 24px;
   }
 }
 </style>
