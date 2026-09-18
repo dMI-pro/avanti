@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AvantiSteps from '@/components/avanti_steps.vue'
 import AvantiBalanceCard from '@/components/avanti_balance_card.vue'
+import AvantiProgressBanner from '@/components/avanti_progress_banner.vue'
 import AvantiPersonalData from '@/components/avanti_personal_data.vue'
 </script>
 
@@ -9,7 +10,7 @@ import AvantiPersonalData from '@/components/avanti_personal_data.vue'
     <div class="avanti-home-layout__left">
       <AvantiSteps />
       <AvantiBalanceCard />
-      <section class="avanti-home-layout__block avanti-home-layout__block--banner" />
+      <AvantiProgressBanner />
     </div>
 
     <div class="avanti-home-layout__right">
@@ -27,6 +28,7 @@ import AvantiPersonalData from '@/components/avanti_personal_data.vue'
   align-items: flex-start;
   gap: var(--avanti-desktop-gap-cols);
   width: 100%;
+  margin-top: 20px;
   padding-bottom: 40px;
 }
 
@@ -52,12 +54,6 @@ import AvantiPersonalData from '@/components/avanti_personal_data.vue'
   border-radius: var(--avanti-radius-lg);
 }
 
-.avanti-home-layout__block--banner {
-  min-height: 124px;
-  border: 1px solid var(--avanti-teal-border);
-  background: var(--avanti-teal-soft);
-}
-
 .avanti-home-layout__block--checklist {
   min-height: 483px;
   border: 1px solid var(--avanti-border);
@@ -81,10 +77,6 @@ import AvantiPersonalData from '@/components/avanti_personal_data.vue'
 
   .avanti-home-layout__personal {
     display: none;
-  }
-
-  .avanti-home-layout__block--banner {
-    min-height: 140px;
   }
 
   .avanti-home-layout__block--checklist {
