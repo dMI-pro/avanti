@@ -3,6 +3,7 @@ import avatarUser from '@/assets/images/avatar-user.jpeg'
 import AvantiHeader from '@/components/avanti_header.vue'
 import AvantiPageToolbar from '@/components/avanti_page_toolbar.vue'
 import AvantiHomeLayout from '@/components/avanti_home_layout.vue'
+import AvantiMobileFooter from '@/components/avanti_mobile_footer.vue'
 
 type NavId = 'home' | 'documenti' | 'profilo'
 
@@ -38,6 +39,7 @@ function onProfile() {}
       </div>
       <AvantiHomeLayout />
     </main>
+    <AvantiMobileFooter active-nav="home" @navigate="onNavigate" @assistenza="onAssistenza" />
   </div>
 </template>
 
@@ -72,7 +74,7 @@ function onProfile() {}
   }
 
   .avanti-home-page__main {
-    padding: 16px var(--avanti-mobile-pad) 24px;
+    padding: 16px var(--avanti-mobile-pad) 86px;
   }
 }
 </style>
