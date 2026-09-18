@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
 type StepStatus = 'done' | 'current' | 'pending'
 
 type Props = {
@@ -9,21 +11,20 @@ type Props = {
   lineAfterActive?: boolean
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   showLineAfter: false,
   lineAfterActive: false,
 })
+
+const rootClass = computed(() => [
+  `avanti-step--${props.status}`,
+  { 'avanti-step--line': props.showLineAfter },
+  { 'avanti-step--line-active': props.showLineAfter && props.lineAfterActive },
+])
 </script>
 
 <template>
-  <li
-    class="avanti-step"
-    :class="[
-      `avanti-step--${status}`,
-      { 'avanti-step--line': showLineAfter },
-      { 'avanti-step--line-active': showLineAfter && lineAfterActive },
-    ]"
-  >
+  <li class="avanti-step" :class="rootClass">
     <div class="avanti-step__node" aria-hidden="true">
       <img class="avanti-step__icon" :src="iconSrc" alt="" width="16" height="16" />
     </div>

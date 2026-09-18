@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
 type Props = {
   label: string
   checked?: boolean
@@ -14,6 +16,11 @@ const emit = defineEmits<{
   'update:checked': [value: boolean]
   change: [value: boolean]
 }>()
+
+const rootClass = computed(() => ({
+  'avanti-checkbox--checked': props.checked,
+  'avanti-checkbox--disabled': props.disabled,
+}))
 
 function onClick() {
   if (props.disabled) return
@@ -31,10 +38,7 @@ function onClick() {
     role="checkbox"
     :aria-checked="checked"
     :disabled="disabled"
-    :class="{
-      'avanti-checkbox--checked': checked,
-      'avanti-checkbox--disabled': disabled,
-    }"
+    :class="rootClass"
     @click="onClick"
   >
     <span class="avanti-checkbox__box" aria-hidden="true">
