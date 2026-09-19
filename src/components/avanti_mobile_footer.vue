@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import iconHome from '@/assets/icons/nav-home-mobile.svg'
-import iconDocs from '@/assets/icons/nav-docs-mobile.svg'
-import iconProfile from '@/assets/icons/nav-profile-mobile.svg'
-import iconChat from '@/assets/icons/nav-chat.svg'
 import AvantiMobileFooterItem from '@/components/avanti_mobile_footer_item.vue'
+import { MAIN_NAV, ASSISTENZA_ICON } from '@/constants/nav'
 import type { NavId } from '@/types'
 
 type Props = {
@@ -20,11 +17,13 @@ const emit = defineEmits<{
   assistenza: []
 }>()
 
-const navItems = computed(() => [
-  { id: 'home' as const, label: 'Home', iconSrc: iconHome },
-  { id: 'documenti' as const, label: 'Documenti', iconSrc: iconDocs },
-  { id: 'profilo' as const, label: 'Profilo', iconSrc: iconProfile },
-])
+const navItems = computed(() =>
+  MAIN_NAV.map((item) => ({
+    id: item.id,
+    label: item.label,
+    iconSrc: item.icon.mobile,
+  })),
+)
 
 function isActive(id: NavId) {
   return props.activeNav === id
@@ -57,7 +56,7 @@ function onAssistenzaClick() {
         @click="onAssistenzaClick"
       >
         <span class="avanti-mobile-footer__assistenza-icon" aria-hidden="true">
-          <img :src="iconChat" alt="" width="14" height="14" />
+          <img :src="ASSISTENZA_ICON" alt="" width="14" height="14" />
         </span>
         <span class="avanti-mobile-footer__assistenza-label">Assistenza</span>
       </button>

@@ -1,14 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import iconHome from '@/assets/icons/nav-home.svg'
-import iconDocs from '@/assets/icons/nav-docs.svg'
-import iconProfile from '@/assets/icons/nav-profile.svg'
-import iconChat from '@/assets/icons/nav-chat.svg'
 import AvantiLogo from '@/components/avanti_logo.vue'
 import AvantiNavItem from '@/components/avanti_nav_item.vue'
 import AvantiButton from '@/components/avanti_button.vue'
 import AvantiNotificationBell from '@/components/avanti_notification_bell.vue'
 import AvantiHeaderProfile from '@/components/avanti_header_profile.vue'
+import { MAIN_NAV, ASSISTENZA_ICON } from '@/constants/nav'
 import type { NavId } from '@/types'
 
 type Props = {
@@ -36,11 +33,13 @@ const emit = defineEmits<{
   profile: []
 }>()
 
-const navItems = computed(() => [
-  { id: 'home' as const, label: 'Home', iconSrc: iconHome },
-  { id: 'documenti' as const, label: 'Documenti', iconSrc: iconDocs },
-  { id: 'profilo' as const, label: 'Profilo', iconSrc: iconProfile },
-])
+const navItems = computed(() =>
+  MAIN_NAV.map((item) => ({
+    id: item.id,
+    label: item.label,
+    iconSrc: item.icon.desktop,
+  })),
+)
 
 function isActive(id: NavId) {
   return props.activeNav === id
@@ -88,7 +87,7 @@ function onProfileClick() {
       <div class="avanti-header__assistenza">
         <AvantiButton
           label="Assistenza"
-          :icon-src="iconChat"
+          :icon-src="ASSISTENZA_ICON"
           :badge="assistenzaBadge"
           uppercase
           @click="onAssistenzaClick"
