@@ -28,7 +28,7 @@ defineProps<Props>()
 .avanti-user-info {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--avanti-modul) * 1.5);
 }
 
 .avanti-user-info__avatar {
@@ -50,14 +50,14 @@ defineProps<Props>()
 .avanti-user-info__name {
   margin: 0;
   color: var(--avanti-ink);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
 .avanti-user-info__email {
   margin: 0;
   color: var(--avanti-muted);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
 }
 </style>

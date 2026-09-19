@@ -71,9 +71,9 @@ const trackSteps = computed(() =>
 .avanti-steps {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: calc(var(--avanti-modul) * 2);
   width: 100%;
-  padding: 20px 24px;
+  padding: calc(var(--avanti-modul) * 2.5) calc(var(--avanti-modul) * 3);
   border: 1px solid var(--avanti-teal-muted-border);
   border-radius: var(--avanti-radius-lg);
   background: var(--avanti-bg);
@@ -84,14 +84,14 @@ const trackSteps = computed(() =>
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: calc(var(--avanti-modul) * 1.5);
   width: 100%;
 }
 
 .avanti-steps__title {
   margin: 0;
   color: var(--avanti-ink);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
   line-height: normal;
 }
@@ -99,7 +99,7 @@ const trackSteps = computed(() =>
 .avanti-steps__counter {
   margin: 0;
   color: var(--avanti-muted);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   line-height: normal;
   white-space: nowrap;
@@ -116,13 +116,13 @@ const trackSteps = computed(() =>
 
 @media (max-width: 1024px) {
   .avanti-steps {
-    gap: 12px;
-    padding: 16px;
+    gap: calc(var(--avanti-modul) * 1.5);
+    padding: calc(var(--avanti-modul) * 2);
   }
 
   .avanti-steps__title,
   .avanti-steps__counter {
-    font-size: 10px;
+    font-size: 0.625rem;
   }
 }
 </style>

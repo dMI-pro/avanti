@@ -38,7 +38,7 @@ function onClick() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: calc(var(--avanti-modul) * 0.5);
   margin: 0;
   padding: 0;
   border: none;
@@ -67,7 +67,7 @@ function onClick() {
 }
 
 .avanti-mobile-footer-item__label {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: normal;
   white-space: nowrap;

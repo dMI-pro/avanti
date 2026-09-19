@@ -101,9 +101,9 @@ function onCheckChange(id: string, checked: boolean) {
 .avanti-progress-banner {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: calc(var(--avanti-modul) * 2);
   width: 100%;
-  padding: 16px 20px;
+  padding: calc(var(--avanti-modul) * 2) calc(var(--avanti-modul) * 2.5);
   border: 1px solid var(--avanti-teal-border);
   border-radius: var(--avanti-radius-lg);
   background: var(--avanti-teal-soft);
@@ -114,13 +114,13 @@ function onCheckChange(id: string, checked: boolean) {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: 6px;
+  gap: calc(var(--avanti-modul) * 0.75);
   min-width: 0;
 }
 
 .avanti-progress-banner__top {
   display: flex;
-  gap: 16px;
+  gap: calc(var(--avanti-modul) * 2);
   align-items: flex-start;
   width: 100%;
 }
@@ -146,14 +146,14 @@ function onCheckChange(id: string, checked: boolean) {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: 6px;
+  gap: calc(var(--avanti-modul) * 0.75);
   min-width: 0;
 }
 
 .avanti-progress-banner__heading {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: calc(var(--avanti-modul) * 1.25);
   width: 100%;
 }
 
@@ -162,20 +162,20 @@ function onCheckChange(id: string, checked: boolean) {
   margin: 0;
   min-width: 0;
   color: var(--avanti-ink);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   line-height: normal;
 }
 
 .avanti-progress-banner__badge {
   flex-shrink: 0;
-  padding: 4px 12px;
+  padding: calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 1.5);
   border-radius: var(--avanti-radius-pill);
   background: var(--avanti-teal);
   color: var(--avanti-white);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.33px;
+  letter-spacing: 0.020625rem;
   line-height: normal;
   text-transform: uppercase;
   white-space: nowrap;
@@ -188,7 +188,7 @@ function onCheckChange(id: string, checked: boolean) {
 .avanti-progress-banner__subtitle {
   margin: 0;
   color: var(--avanti-muted);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   line-height: normal;
 }
@@ -197,7 +197,7 @@ function onCheckChange(id: string, checked: boolean) {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 12px;
+  gap: calc(var(--avanti-modul) * 1.5);
   width: 100%;
   padding-left: 60px;
 }
@@ -205,7 +205,7 @@ function onCheckChange(id: string, checked: boolean) {
 .avanti-progress-banner__checks {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--avanti-modul);
 }
 
 .avanti-progress-banner__action {
@@ -229,16 +229,16 @@ function onCheckChange(id: string, checked: boolean) {
 
 @media (max-width: 1024px) {
   .avanti-progress-banner {
-    padding: 16px;
+    padding: calc(var(--avanti-modul) * 2);
     border-color: var(--avanti-teal);
   }
 
   .avanti-progress-banner__main {
-    gap: 12px;
+    gap: calc(var(--avanti-modul) * 1.5);
   }
 
   .avanti-progress-banner__top {
-    gap: 12px;
+    gap: calc(var(--avanti-modul) * 1.5);
   }
 
   .avanti-progress-banner__icon {
@@ -254,7 +254,7 @@ function onCheckChange(id: string, checked: boolean) {
   }
 
   .avanti-progress-banner__text {
-    gap: 2px;
+    gap: calc(var(--avanti-modul) * 0.25);
   }
 
   .avanti-progress-banner__heading {
@@ -270,7 +270,7 @@ function onCheckChange(id: string, checked: boolean) {
   }
 
   .avanti-progress-banner__subtitle {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
 
   .avanti-progress-banner__bottom {

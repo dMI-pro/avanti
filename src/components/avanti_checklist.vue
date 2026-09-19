@@ -177,24 +177,24 @@ function onItemClick(id: string) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 16px;
+  gap: calc(var(--avanti-modul) * 1.5);
+  padding: calc(var(--avanti-modul) * 2);
 }
 
 .avanti-checklist__heading {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: 4px;
+  gap: calc(var(--avanti-modul) * 0.5);
   min-width: 0;
 }
 
 .avanti-checklist__eyebrow {
   margin: 0;
   color: var(--avanti-teal);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.55px;
+  letter-spacing: 0.034375rem;
   line-height: normal;
   text-transform: uppercase;
 }
@@ -202,7 +202,7 @@ function onItemClick(id: string) {
 .avanti-checklist__title {
   margin: 0;
   color: var(--avanti-ink);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   line-height: normal;
 }
@@ -244,10 +244,10 @@ function onItemClick(id: string) {
 
 .avanti-checklist__progress {
   display: flex;
-  gap: 4px;
+  gap: calc(var(--avanti-modul) * 0.5);
   align-items: center;
   width: 100%;
-  padding: 12px 16px 16px;
+  padding: calc(var(--avanti-modul) * 1.5) calc(var(--avanti-modul) * 2) calc(var(--avanti-modul) * 2);
 }
 
 .avanti-checklist__segment {

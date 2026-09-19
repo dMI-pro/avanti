@@ -29,15 +29,15 @@ import AvantiChecklist from '@/components/avanti_checklist.vue'
   align-items: flex-start;
   gap: var(--avanti-desktop-gap-cols);
   width: 100%;
-  margin-top: 20px;
-  padding-bottom: 40px;
+  margin-top: calc(var(--avanti-modul) * 2.5);
+  padding-bottom: calc(var(--avanti-modul) * 5);
 }
 
 .avanti-home-layout__left,
 .avanti-home-layout__right {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: calc(var(--avanti-modul) * 4);
   min-width: 0;
 }
 
@@ -53,15 +53,15 @@ import AvantiChecklist from '@/components/avanti_checklist.vue'
 @media (max-width: 1024px) {
   .avanti-home-layout {
     flex-direction: column;
-    gap: 20px;
-    padding-bottom: 24px;
+    gap: calc(var(--avanti-modul) * 2.5);
+    padding-bottom: calc(var(--avanti-modul) * 3);
   }
 
   .avanti-home-layout__left,
   .avanti-home-layout__right {
     width: 100%;
     flex: none;
-    gap: 20px;
+    gap: calc(var(--avanti-modul) * 2.5);
   }
 
   .avanti-home-layout__personal {

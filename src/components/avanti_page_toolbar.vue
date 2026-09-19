@@ -25,9 +25,9 @@ defineProps<Props>()
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: calc(var(--avanti-modul) * 3);
   width: 100%;
-  padding: 10px 0;
+  padding: calc(var(--avanti-modul) * 1.25) 0;
   background: var(--avanti-bg-page);
 }
 </style>

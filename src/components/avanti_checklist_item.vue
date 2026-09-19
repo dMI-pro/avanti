@@ -61,9 +61,9 @@ function onClick() {
 .avanti-checklist-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--avanti-modul) * 1.5);
   width: 100%;
-  padding: 16px;
+  padding: calc(var(--avanti-modul) * 2);
   border: none;
   background: transparent;
   text-align: left;
@@ -92,20 +92,20 @@ button.avanti-checklist-item {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: 2px;
+  gap: calc(var(--avanti-modul) * 0.25);
   min-width: 0;
 }
 
 .avanti-checklist-item__title {
   color: var(--avanti-ink);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   line-height: normal;
 }
 
 .avanti-checklist-item__status {
   color: var(--avanti-teal);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 500;
   line-height: normal;
 }
@@ -179,7 +179,7 @@ button.avanti-checklist-item {
   }
 
   .avanti-checklist-item__title {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   .avanti-checklist-item--current {

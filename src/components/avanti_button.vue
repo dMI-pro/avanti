@@ -60,8 +60,8 @@ function onClick() {
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
+  gap: calc(var(--avanti-modul) * 1.5);
+  padding: calc(var(--avanti-modul) * 1.25) calc(var(--avanti-modul) * 1.5);
   border: none;
   border-radius: var(--avanti-radius-sm);
   background: var(--avanti-teal);
@@ -90,7 +90,7 @@ function onClick() {
 }
 
 .avanti-button__label {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   line-height: normal;
   white-space: nowrap;
@@ -102,18 +102,18 @@ function onClick() {
 
 .avanti-button__badge {
   position: absolute;
-  top: -10px;
-  right: -6px;
+  top: calc(var(--avanti-modul) * -1.25);
+  right: calc(var(--avanti-modul) * -0.75);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 22px;
   height: 22px;
-  border: 2px solid var(--avanti-white);
+  border: calc(var(--avanti-modul) * 0.25) solid var(--avanti-white);
   border-radius: 11px;
   background: var(--avanti-danger);
   color: var(--avanti-white);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 700;
   line-height: normal;
 }

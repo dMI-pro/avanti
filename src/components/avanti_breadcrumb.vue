@@ -19,8 +19,8 @@ defineProps<Props>()
 .avanti-breadcrumb {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
+  gap: var(--avanti-modul);
+  font-size: 0.875rem;
   line-height: normal;
   white-space: nowrap;
 }

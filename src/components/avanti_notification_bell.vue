@@ -74,8 +74,8 @@ function onClick() {
 
 .avanti-notification-bell__badge {
   position: absolute;
-  top: 2px;
-  right: 3px;
+  top: calc(var(--avanti-modul) * 0.25);
+  right: calc(var(--avanti-modul) * 0.375);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +86,7 @@ function onClick() {
   border-radius: 6px;
   background: var(--avanti-danger);
   color: var(--avanti-white);
-  font-size: 6px;
+  font-size: 0.375rem;
   font-weight: 700;
   line-height: 1;
 }

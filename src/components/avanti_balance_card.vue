@@ -78,9 +78,9 @@ function onCtaClick() {
 .avanti-balance-card {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: calc(var(--avanti-modul) * 2);
   width: 100%;
-  padding: 32px;
+  padding: calc(var(--avanti-modul) * 4);
   border-radius: var(--avanti-radius-xl);
   background: var(--avanti-gradient-balance);
   box-shadow: var(--avanti-shadow-balance);
@@ -90,14 +90,14 @@ function onCtaClick() {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
+  gap: calc(var(--avanti-modul) * 2);
   width: 100%;
 }
 
 .avanti-balance-card__meta {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: calc(var(--avanti-modul) * 2.75);
   min-width: 0;
   color: var(--avanti-teal-soft);
   text-transform: uppercase;
@@ -105,27 +105,27 @@ function onCtaClick() {
 
 .avanti-balance-card__title {
   margin: 0;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.13px;
+  letter-spacing: 0.008125rem;
   line-height: normal;
 }
 
 .avanti-balance-card__subtitle {
   margin: 0;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.16px;
+  letter-spacing: 0.01rem;
   line-height: normal;
 }
 
 .avanti-balance-card__badge {
   flex-shrink: 0;
-  padding: 4px 10px;
+  padding: calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 1.25);
   border-radius: var(--avanti-radius-pill);
   background: var(--avanti-white-alpha-20);
   color: var(--avanti-white);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 700;
   line-height: normal;
   white-space: nowrap;
@@ -134,23 +134,23 @@ function onCtaClick() {
 .avanti-balance-card__amount-block {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: calc(var(--avanti-modul) * 0.5);
   width: 100%;
 }
 
 .avanti-balance-card__amount {
   margin: 0;
   color: var(--avanti-white);
-  font-size: 52px;
+  font-size: 3.25rem;
   font-weight: 700;
-  letter-spacing: -0.78px;
+  letter-spacing: -0.04875rem;
   line-height: normal;
 }
 
 .avanti-balance-card__loan {
   margin: 0;
   color: var(--avanti-teal-soft);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: normal;
 }
@@ -159,9 +159,9 @@ function onCtaClick() {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: calc(var(--avanti-modul) * 1.5);
   width: 100%;
-  padding: 18px 24px;
+  padding: calc(var(--avanti-modul) * 2.25) calc(var(--avanti-modul) * 3);
   border: none;
   border-radius: var(--avanti-radius-md);
   background: var(--avanti-bg-page);
@@ -177,7 +177,7 @@ function onCtaClick() {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: calc(var(--avanti-modul) * 1.25);
 }
 
 .avanti-balance-card__cta-icon {
@@ -197,13 +197,13 @@ function onCtaClick() {
 }
 
 .avanti-balance-card__cta-label {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
-  letter-spacing: 0.036px;
+  letter-spacing: 0.00225rem;
 }
 
 .avanti-balance-card__cta-arrow {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 500;
   opacity: 0.85;
 }
@@ -211,9 +211,9 @@ function onCtaClick() {
 .avanti-balance-card__footnote {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: calc(var(--avanti-modul) * 2);
   width: 100%;
-  padding-top: 8px;
+  padding-top: var(--avanti-modul);
 }
 
 .avanti-balance-card__footnote-line {
@@ -226,19 +226,19 @@ function onCtaClick() {
 .avanti-balance-card__footnote-text {
   margin: 0;
   color: var(--avanti-teal-soft);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
   line-height: normal;
 }
 
 @media (max-width: 1024px) {
   .avanti-balance-card {
-    gap: 12px;
-    padding: 20px;
+    gap: calc(var(--avanti-modul) * 1.5);
+    padding: calc(var(--avanti-modul) * 2.5);
   }
 
   .avanti-balance-card__meta {
-    gap: 8px;
+    gap: var(--avanti-modul);
   }
 
   .avanti-balance-card__title {
@@ -247,27 +247,27 @@ function onCtaClick() {
 
   .avanti-balance-card__subtitle {
     max-width: 150px;
-    font-size: 10px;
-    letter-spacing: 0.1px;
+    font-size: 0.625rem;
+    letter-spacing: 0.00625rem;
   }
 
   .avanti-balance-card__amount {
-    font-size: 36px;
-    letter-spacing: -0.54px;
+    font-size: 2.25rem;
+    letter-spacing: -0.03375rem;
   }
 
   .avanti-balance-card__loan {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .avanti-balance-card__cta {
-    gap: 4px;
-    padding: 12px 24px;
+    gap: calc(var(--avanti-modul) * 0.5);
+    padding: calc(var(--avanti-modul) * 1.5) calc(var(--avanti-modul) * 3);
     border-radius: 9px;
   }
 
   .avanti-balance-card__cta-main {
-    gap: 12px;
+    gap: calc(var(--avanti-modul) * 1.5);
   }
 
   .avanti-balance-card__cta-icon {
@@ -276,8 +276,8 @@ function onCtaClick() {
   }
 
   .avanti-balance-card__cta-label {
-    font-size: 16px;
-    letter-spacing: 0.032px;
+    font-size: 1rem;
+    letter-spacing: 0.002rem;
   }
 
   .avanti-balance-card__footnote {

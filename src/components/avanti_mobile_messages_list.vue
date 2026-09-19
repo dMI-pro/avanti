@@ -63,8 +63,8 @@ function onClick() {
 @media (max-width: 1024px) {
   .avanti-mobile-messages-list {
     position: fixed;
-    right: 20px;
-    bottom: 95px;
+    right: calc(var(--avanti-modul) * 2.5);
+    bottom: calc(var(--avanti-modul) * 11.875);
     z-index: 40;
     display: block;
   }
@@ -96,8 +96,8 @@ function onClick() {
 
   .avanti-mobile-messages-list__badge {
     position: absolute;
-    top: -14px;
-    left: 39px;
+    top: calc(var(--avanti-modul) * -1.75);
+    left: calc(var(--avanti-modul) * 4.875);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,7 +106,7 @@ function onClick() {
     border-radius: 18px;
     background: var(--avanti-badge-dark-red);
     color: var(--avanti-white);
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 700;
     line-height: 1;
   }

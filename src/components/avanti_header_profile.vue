@@ -41,7 +41,7 @@ function onClick() {
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  gap: 6px;
+  gap: calc(var(--avanti-modul) * 0.75);
   margin: 0;
   padding: 0;
   border: none;
@@ -60,7 +60,7 @@ function onClick() {
 
 .avanti-header-profile__initials {
   color: var(--avanti-ink);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   line-height: normal;
   white-space: nowrap;

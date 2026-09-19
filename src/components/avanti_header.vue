@@ -124,7 +124,7 @@ function onProfileClick() {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: calc(var(--avanti-modul) * 3);
   width: 100%;
   max-width: var(--avanti-desktop-width);
   margin: 0 auto;
@@ -135,9 +135,9 @@ function onProfileClick() {
   display: flex;
   flex: 1 1 auto;
   align-items: center;
-  gap: 52px;
+  gap: calc(var(--avanti-modul) * 6.5);
   min-width: 0;
-  padding: 20px 0;
+  padding: calc(var(--avanti-modul) * 2.5) 0;
 }
 
 .avanti-header__logo-mobile {
@@ -147,7 +147,7 @@ function onProfileClick() {
 .avanti-header__nav {
   display: flex;
   flex: 1 1 auto;
-  gap: 12px;
+  gap: calc(var(--avanti-modul) * 1.5);
   max-width: 660px;
   min-width: 0;
 }
@@ -155,25 +155,25 @@ function onProfileClick() {
 .avanti-header__mobile-actions {
   display: none;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--avanti-modul) * 1.5);
   flex-shrink: 0;
 }
 
 @media (max-width: 1200px) {
   .avanti-header__inner {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: calc(var(--avanti-modul) * 4);
+    padding-right: calc(var(--avanti-modul) * 4);
   }
 
   .avanti-header__brand-nav {
-    gap: 24px;
+    gap: calc(var(--avanti-modul) * 3);
   }
 }
 
 @media (max-width: 1024px) {
   .avanti-header__inner {
-    padding: 12px var(--avanti-mobile-pad);
-    gap: 12px;
+    padding: calc(var(--avanti-modul) * 1.5) var(--avanti-mobile-pad);
+    gap: calc(var(--avanti-modul) * 1.5);
   }
 
   .avanti-header__brand-nav {

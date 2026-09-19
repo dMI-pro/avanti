@@ -39,7 +39,7 @@ const rootClass = computed(() => [
   flex: 1 1 0;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: var(--avanti-modul);
   min-width: 0;
 }
 
@@ -60,7 +60,7 @@ const rootClass = computed(() => [
 }
 
 .avanti-step__label {
-  font-size: 11px;
+  font-size: 0.6875rem;
   line-height: normal;
   text-align: center;
   white-space: nowrap;
@@ -112,7 +112,7 @@ const rootClass = computed(() => [
 
 @media (max-width: 1024px) {
   .avanti-step {
-    gap: 4px;
+    gap: calc(var(--avanti-modul) * 0.5);
   }
 
   .avanti-step__node {
@@ -127,7 +127,7 @@ const rootClass = computed(() => [
   }
 
   .avanti-step__label {
-    font-size: 10px;
+    font-size: 0.625rem;
   }
 
   .avanti-step--line::after {

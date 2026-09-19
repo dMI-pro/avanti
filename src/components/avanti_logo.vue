@@ -28,7 +28,7 @@ withDefaults(defineProps<Props>(), {
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--avanti-modul) * 1.5);
 }
 
 .avanti-logo__mark {
@@ -39,16 +39,16 @@ withDefaults(defineProps<Props>(), {
 }
 
 .avanti-logo__text {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -1.6px;
+  letter-spacing: -0.1rem;
   color: var(--avanti-logo-black);
   white-space: nowrap;
 }
 
 .avanti-logo--compact {
-  gap: 6px;
+  gap: calc(var(--avanti-modul) * 0.75);
 }
 
 .avanti-logo--compact .avanti-logo__mark {
@@ -57,8 +57,8 @@ withDefaults(defineProps<Props>(), {
 }
 
 .avanti-logo--compact .avanti-logo__text {
-  font-size: 22px;
-  letter-spacing: -1.1px;
+  font-size: 1.375rem;
+  letter-spacing: -0.06875rem;
   color: var(--avanti-ink);
 }
 </style>

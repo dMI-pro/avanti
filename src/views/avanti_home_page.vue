@@ -68,8 +68,8 @@ function onMessages() {}
 
 @media (max-width: 1200px) {
   .avanti-home-page__main {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: calc(var(--avanti-modul) * 4);
+    padding-right: calc(var(--avanti-modul) * 4);
   }
 }
 
@@ -79,7 +79,7 @@ function onMessages() {}
   }
 
   .avanti-home-page__main {
-    padding: 16px var(--avanti-mobile-pad) 86px;
+    padding: calc(var(--avanti-modul) * 2) var(--avanti-mobile-pad) calc(var(--avanti-modul) * 10.75);
   }
 }
 </style>

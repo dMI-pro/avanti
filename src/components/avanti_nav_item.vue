@@ -37,14 +37,14 @@ function onClick() {
   display: flex;
   flex: 1 1 0;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--avanti-modul) * 1.5);
   min-width: max-content;
-  padding: 10px 12px;
+  padding: calc(var(--avanti-modul) * 1.25) calc(var(--avanti-modul) * 1.5);
   border: 1px solid var(--avanti-teal-soft);
   border-radius: var(--avanti-radius-sm);
   background: var(--avanti-bg-page);
   color: var(--avanti-ink);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: normal;
   cursor: pointer;

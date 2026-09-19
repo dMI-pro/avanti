@@ -52,7 +52,7 @@ function onClick() {
 .avanti-checkbox {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--avanti-modul);
   margin: 0;
   padding: 0;
   border: none;
@@ -84,7 +84,7 @@ function onClick() {
 
 .avanti-checkbox__label {
   color: var(--avanti-ink);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   line-height: normal;
   white-space: nowrap;

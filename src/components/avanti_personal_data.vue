@@ -34,9 +34,9 @@ withDefaults(defineProps<Props>(), {
 .avanti-personal-data {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: calc(var(--avanti-modul) * 2);
   width: 100%;
-  padding: 24px;
+  padding: calc(var(--avanti-modul) * 3);
   border: 1px solid var(--avanti-border);
   border-radius: var(--avanti-radius-lg);
   background: var(--avanti-bg);
@@ -45,7 +45,7 @@ withDefaults(defineProps<Props>(), {
 .avanti-personal-data__title {
   margin: 0;
   color: var(--avanti-ink);
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   line-height: normal;
 }
@@ -53,7 +53,7 @@ withDefaults(defineProps<Props>(), {
 .avanti-personal-data__list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: calc(var(--avanti-modul) * 1.5);
   width: 100%;
   margin: 0;
 }
@@ -62,14 +62,14 @@ withDefaults(defineProps<Props>(), {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: calc(var(--avanti-modul) * 2);
   width: 100%;
 }
 
 .avanti-personal-data__label {
   margin: 0;
   color: var(--avanti-muted);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
   line-height: normal;
 }
@@ -77,7 +77,7 @@ withDefaults(defineProps<Props>(), {
 .avanti-personal-data__value {
   margin: 0;
   color: var(--avanti-ink);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   line-height: normal;
   text-align: right;

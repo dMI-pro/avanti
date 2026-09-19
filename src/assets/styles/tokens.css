@@ -1,4 +1,6 @@
 :root {
+  --avanti-modul: 8px;
+
   --avanti-teal: #2491aa;
   --avanti-teal-dark: #1a7488;
   --avanti-teal-soft: #eaf4f6;
@@ -30,32 +32,32 @@
   --avanti-teal-alpha-19: rgba(36, 145, 170, 0.19);
   --avanti-teal-alpha-25: rgba(36, 145, 170, 0.25);
 
-  --avanti-radius-sm: 8px;
-  --avanti-radius-md: 14px;
-  --avanti-radius-lg: 16px;
-  --avanti-radius-xl: 20px;
+  --avanti-radius-sm: var(--avanti-modul);
+  --avanti-radius-md: calc(var(--avanti-modul) * 1.75);
+  --avanti-radius-lg: calc(var(--avanti-modul) * 2);
+  --avanti-radius-xl: calc(var(--avanti-modul) * 2.5);
   --avanti-radius-pill: 99px;
   --avanti-radius-circle: 50%;
 
   --avanti-desktop-width: 1440px;
   --avanti-mobile-width: 390px;
-  --avanti-desktop-gutter: 72px;
-  --avanti-desktop-gap-cols: 40px;
+  --avanti-desktop-gutter: calc(var(--avanti-modul) * 9);
+  --avanti-desktop-gap-cols: calc(var(--avanti-modul) * 5);
   --avanti-left-col: 792px;
   --avanti-right-col: 464px;
-  --avanti-mobile-pad: 16px;
+  --avanti-mobile-pad: calc(var(--avanti-modul) * 2);
 
   --avanti-font-stack-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --avanti-font-primary: Inter, var(--avanti-font-stack-base);
   --avanti-font-accent: Geist, var(--avanti-font-primary);
 
-  --avanti-shadow-card: 0 2px 4px var(--avanti-ink-alpha-6);
-  --avanti-shadow-balance: 0 8px 12px var(--avanti-teal-alpha-19);
-  --avanti-shadow-icon: 0 4px 4px var(--avanti-teal-alpha-19);
-  --avanti-shadow-cta: 0 4px 4px var(--avanti-teal-alpha-25);
-  --avanti-shadow-checklist: 0 4px 16px var(--avanti-ink-alpha-3);
-  --avanti-shadow-pulse-lo: 0 0 4px 1px var(--avanti-teal-alpha-40);
-  --avanti-shadow-pulse-hi: 0 0 14px 4px var(--avanti-teal-alpha-85);
+  --avanti-shadow-card: 0 calc(var(--avanti-modul) * 0.25) calc(var(--avanti-modul) * 0.5) var(--avanti-ink-alpha-6);
+  --avanti-shadow-balance: 0 var(--avanti-modul) calc(var(--avanti-modul) * 1.5) var(--avanti-teal-alpha-19);
+  --avanti-shadow-icon: 0 calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 0.5) var(--avanti-teal-alpha-19);
+  --avanti-shadow-cta: 0 calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 0.5) var(--avanti-teal-alpha-25);
+  --avanti-shadow-checklist: 0 calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 2) var(--avanti-ink-alpha-3);
+  --avanti-shadow-pulse-lo: 0 0 calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 0.125) var(--avanti-teal-alpha-40);
+  --avanti-shadow-pulse-hi: 0 0 calc(var(--avanti-modul) * 1.75) calc(var(--avanti-modul) * 0.5) var(--avanti-teal-alpha-85);
 
   --avanti-gradient-balance: linear-gradient(180deg, var(--avanti-teal) 0%, var(--avanti-teal-dark) 100%);
   --avanti-gradient-progress: linear-gradient(90deg, var(--avanti-teal) 0%, var(--avanti-border) 100%);
