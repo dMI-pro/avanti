@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import avatarUser from '@/assets/images/avatar-user.jpeg'
+import avatarSupport from '@/assets/images/avatar-support.png'
 import AvantiHeader from '@/components/avanti_header.vue'
 import AvantiPageToolbar from '@/components/avanti_page_toolbar.vue'
 import AvantiHomeLayout from '@/components/avanti_home_layout.vue'
 import AvantiMobileFooter from '@/components/avanti_mobile_footer.vue'
+import AvantiMobileMessagesList from '@/components/avanti_mobile_messages_list.vue'
 
 type NavId = 'home' | 'documenti' | 'profilo'
 
@@ -14,6 +16,8 @@ function onAssistenza() {}
 function onNotifications() {}
 
 function onProfile() {}
+
+function onMessages() {}
 </script>
 
 <template>
@@ -39,6 +43,7 @@ function onProfile() {}
       </div>
       <AvantiHomeLayout />
     </main>
+    <AvantiMobileMessagesList :avatar-src="avatarSupport" :badge="2" @click="onMessages" />
     <AvantiMobileFooter active-nav="home" @navigate="onNavigate" @assistenza="onAssistenza" />
   </div>
 </template>
