@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import AvantiBadge from '@/components/avanti_badge.vue'
 
 type Props = {
   label: string
@@ -17,18 +17,6 @@ const props = withDefaults(defineProps<Props>(), {
 const emit = defineEmits<{
   click: []
 }>()
-
-const hasBadge = computed(() => {
-  if (props.badge === undefined || props.badge === null || props.badge === '') {
-    return false
-  }
-
-  if (typeof props.badge === 'number') {
-    return props.badge > 0
-  }
-
-  return true
-})
 
 function onClick() {
   if (props.disabled) return
@@ -48,9 +36,16 @@ function onClick() {
       <img :src="iconSrc" alt="" width="16" height="16" />
     </span>
     <span class="avanti-button__label">{{ label }}</span>
-    <span v-if="hasBadge" class="avanti-button__badge" aria-hidden="true">
-      {{ badge }}
-    </span>
+    <AvantiBadge
+      variant="count"
+      size="md"
+      color="danger"
+      position="top-right"
+      :text="badge"
+      :with-border="true"
+      offset-top="calc(var(--avanti-modul) * -1.25)"
+      offset-right="calc(var(--avanti-modul) * -0.75)"
+    />
   </button>
 </template>
 
@@ -98,23 +93,5 @@ function onClick() {
 
 .avanti-button--uppercase .avanti-button__label {
   text-transform: uppercase;
-}
-
-.avanti-button__badge {
-  position: absolute;
-  top: calc(var(--avanti-modul) * -1.25);
-  right: calc(var(--avanti-modul) * -0.75);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  border: calc(var(--avanti-modul) * 0.25) solid var(--avanti-white);
-  border-radius: 11px;
-  background: var(--avanti-danger);
-  color: var(--avanti-white);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  line-height: normal;
 }
 </style>

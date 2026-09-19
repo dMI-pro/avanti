@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import iconLock from '@/assets/icons/icon-lock.svg'
 import iconArrow from '@/assets/icons/icon-arrow-right.svg'
 import AvantiCheckbox from '@/components/avanti_checkbox.vue'
+import AvantiBadge from '@/components/avanti_badge.vue'
 
 type CheckItem = {
   id: string
@@ -61,9 +62,14 @@ function onCheckChange(id: string, checked: boolean) {
         <div class="avanti-progress-banner__text">
           <div class="avanti-progress-banner__heading">
             <p class="avanti-progress-banner__title">{{ title }}</p>
-            <span class="avanti-progress-banner__badge avanti-progress-banner__badge--desktop">
-              {{ badge }}
-            </span>
+            <AvantiBadge
+              class="avanti-progress-banner__badge-desktop"
+              variant="pill"
+              size="md"
+              color="teal"
+              :text="badge"
+              uppercase
+            />
           </div>
           <p class="avanti-progress-banner__subtitle">{{ subtitle }}</p>
         </div>
@@ -80,9 +86,14 @@ function onCheckChange(id: string, checked: boolean) {
           />
         </div>
 
-        <span class="avanti-progress-banner__badge avanti-progress-banner__badge--mobile">
-          {{ mobileBadge }}
-        </span>
+        <AvantiBadge
+          class="avanti-progress-banner__badge-mobile"
+          variant="pill"
+          size="md"
+          color="teal"
+          :text="mobileBadge"
+          uppercase
+        />
       </div>
     </div>
 
@@ -167,21 +178,7 @@ function onCheckChange(id: string, checked: boolean) {
   line-height: normal;
 }
 
-.avanti-progress-banner__badge {
-  flex-shrink: 0;
-  padding: calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 1.5);
-  border-radius: var(--avanti-radius-pill);
-  background: var(--avanti-teal);
-  color: var(--avanti-white);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.020625rem;
-  line-height: normal;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.avanti-progress-banner__badge--mobile {
+.avanti-progress-banner__badge-mobile {
   display: none;
 }
 
@@ -261,11 +258,11 @@ function onCheckChange(id: string, checked: boolean) {
     display: block;
   }
 
-  .avanti-progress-banner__badge--desktop {
+  .avanti-progress-banner__badge-desktop {
     display: none;
   }
 
-  .avanti-progress-banner__badge--mobile {
+  .avanti-progress-banner__badge-mobile {
     display: inline-flex;
   }
 

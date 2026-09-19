@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import AvantiBadge from '@/components/avanti_badge.vue'
 import iconBell from '@/assets/icons/icon-bell.svg'
 
 type Props = {
@@ -11,18 +11,6 @@ const props = defineProps<Props>()
 const emit = defineEmits<{
   click: []
 }>()
-
-const hasBadge = computed(() => {
-  if (props.badge === undefined || props.badge === null || props.badge === '') {
-    return false
-  }
-
-  if (typeof props.badge === 'number') {
-    return props.badge > 0
-  }
-
-  return true
-})
 
 function onClick() {
   emit('click')
@@ -43,9 +31,16 @@ function onClick() {
       width="22"
       height="26"
     />
-    <span v-if="hasBadge" class="avanti-notification-bell__badge" aria-hidden="true">
-      {{ badge }}
-    </span>
+    <AvantiBadge
+      variant="count"
+      size="sm"
+      color="danger"
+      position="top-right"
+      :text="badge"
+      :with-border="true"
+      offset-top="calc(var(--avanti-modul) * 0.25)"
+      offset-right="calc(var(--avanti-modul) * 0.375)"
+    />
   </button>
 </template>
 
@@ -70,24 +65,5 @@ function onClick() {
   width: 21px;
   height: 26px;
   object-fit: contain;
-}
-
-.avanti-notification-bell__badge {
-  position: absolute;
-  top: calc(var(--avanti-modul) * 0.25);
-  right: calc(var(--avanti-modul) * 0.375);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 12px;
-  height: 12px;
-  padding: 0 3px;
-  border: 1px solid var(--avanti-white);
-  border-radius: 6px;
-  background: var(--avanti-danger);
-  color: var(--avanti-white);
-  font-size: 0.375rem;
-  font-weight: 700;
-  line-height: 1;
 }
 </style>

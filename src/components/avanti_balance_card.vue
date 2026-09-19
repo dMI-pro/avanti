@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AvantiBadge from '@/components/avanti_badge.vue'
 import iconBank from '@/assets/icons/icon-bank.svg'
 
 type Props = {
@@ -40,7 +41,12 @@ function onCtaClick() {
         <p class="avanti-balance-card__title">{{ title }}</p>
         <p class="avanti-balance-card__subtitle">{{ subtitle }}</p>
       </div>
-      <span class="avanti-balance-card__badge">{{ badge }}</span>
+      <AvantiBadge
+        variant="pill"
+        size="md"
+        color="white-alpha"
+        :text="badge"
+      />
     </div>
 
     <div class="avanti-balance-card__amount-block">
@@ -117,18 +123,6 @@ function onCtaClick() {
   font-weight: 600;
   letter-spacing: 0.01rem;
   line-height: normal;
-}
-
-.avanti-balance-card__badge {
-  flex-shrink: 0;
-  padding: calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 1.25);
-  border-radius: var(--avanti-radius-pill);
-  background: var(--avanti-white-alpha-20);
-  color: var(--avanti-white);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  line-height: normal;
-  white-space: nowrap;
 }
 
 .avanti-balance-card__amount-block {

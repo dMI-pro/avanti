@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import AvantiBadge from '@/components/avanti_badge.vue'
 
 type Props = {
   avatarSrc: string
@@ -15,18 +15,6 @@ const props = withDefaults(defineProps<Props>(), {
 const emit = defineEmits<{
   click: []
 }>()
-
-const hasBadge = computed(() => {
-  if (props.badge === undefined || props.badge === null || props.badge === '') {
-    return false
-  }
-
-  if (typeof props.badge === 'number') {
-    return props.badge > 0
-  }
-
-  return true
-})
 
 function onClick() {
   emit('click')
@@ -48,9 +36,15 @@ function onClick() {
         width="57"
         height="57"
       />
-      <span v-if="hasBadge" class="avanti-mobile-messages-list__badge" aria-hidden="true">
-        {{ badge }}
-      </span>
+      <AvantiBadge
+        variant="count"
+        size="lg"
+        color="dark-red"
+        position="top-right"
+        :text="badge"
+        offset-top="calc(var(--avanti-modul) * -1.75)"
+        offset-right="calc(var(--avanti-modul) * -1.25)"
+      />
     </button>
   </div>
 </template>
@@ -92,23 +86,6 @@ function onClick() {
     border-radius: var(--avanti-radius-circle);
     object-fit: cover;
     pointer-events: none;
-  }
-
-  .avanti-mobile-messages-list__badge {
-    position: absolute;
-    top: calc(var(--avanti-modul) * -1.75);
-    left: calc(var(--avanti-modul) * 4.875);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 18px;
-    background: var(--avanti-badge-dark-red);
-    color: var(--avanti-white);
-    font-size: 1.125rem;
-    font-weight: 700;
-    line-height: 1;
   }
 }
 
