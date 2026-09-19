@@ -34,21 +34,21 @@ function onClick() {
 </script>
 
 <template>
-  <div class="avanti-messages-list">
+  <div class="avanti-mobile-messages-list">
     <button
-      class="avanti-messages-list__button"
+      class="avanti-mobile-messages-list__button"
       type="button"
       :aria-label="label"
       @click="onClick"
     >
       <img
-        class="avanti-messages-list__avatar"
+        class="avanti-mobile-messages-list__avatar"
         :src="avatarSrc"
         alt=""
         width="57"
         height="57"
       />
-      <span v-if="hasBadge" class="avanti-messages-list__badge" aria-hidden="true">
+      <span v-if="hasBadge" class="avanti-mobile-messages-list__badge" aria-hidden="true">
         {{ badge }}
       </span>
     </button>
@@ -56,12 +56,12 @@ function onClick() {
 </template>
 
 <style scoped>
-.avanti-messages-list {
+.avanti-mobile-messages-list {
   display: none;
 }
 
 @media (max-width: 1024px) {
-  .avanti-messages-list {
+  .avanti-mobile-messages-list {
     position: fixed;
     right: 12px;
     bottom: 78px;
@@ -69,7 +69,7 @@ function onClick() {
     display: block;
   }
 
-  .avanti-messages-list__button {
+  .avanti-mobile-messages-list__button {
     position: relative;
     display: flex;
     align-items: center;
@@ -83,10 +83,10 @@ function onClick() {
     background: transparent;
     cursor: pointer;
     overflow: visible;
-    animation: avanti-messages-list-pulse 2.5s ease-in-out infinite;
+    animation: avanti-mobile-messages-list-pulse 2.5s ease-in-out infinite;
   }
 
-  .avanti-messages-list__avatar {
+  .avanti-mobile-messages-list__avatar {
     width: 100%;
     height: 100%;
     border-radius: var(--avanti-radius-circle);
@@ -94,7 +94,7 @@ function onClick() {
     pointer-events: none;
   }
 
-  .avanti-messages-list__badge {
+  .avanti-mobile-messages-list__badge {
     position: absolute;
     top: -14px;
     left: 39px;
@@ -112,7 +112,7 @@ function onClick() {
   }
 }
 
-@keyframes avanti-messages-list-pulse {
+@keyframes avanti-mobile-messages-list-pulse {
   0%,
   100% {
     box-shadow: 0 0 4px 1px rgba(36, 145, 170, 0.4);
