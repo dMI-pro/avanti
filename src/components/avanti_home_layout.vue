@@ -29,6 +29,7 @@ import AvantiChecklist from '@/components/avanti_checklist.vue'
   align-items: flex-start;
   gap: var(--avanti-desktop-gap-cols);
   width: 100%;
+  margin-top: 20px;
   padding-bottom: 40px;
 }
 

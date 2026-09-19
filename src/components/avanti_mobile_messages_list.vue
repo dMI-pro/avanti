@@ -63,7 +63,7 @@ function onClick() {
 @media (max-width: 1024px) {
   .avanti-mobile-messages-list {
     position: fixed;
-    right: 12px;
+    right: 20px;
     bottom: 78px;
     z-index: 40;
     display: block;
