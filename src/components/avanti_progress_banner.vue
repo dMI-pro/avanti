@@ -4,6 +4,7 @@ import iconLock from '@/assets/icons/icon-lock.svg'
 import iconArrow from '@/assets/icons/icon-arrow-right.svg'
 import AvantiCheckbox from '@/components/avanti_checkbox.vue'
 import AvantiBadge from '@/components/avanti_badge.vue'
+import AvantiIcon from '@/components/avanti_icon.vue'
 
 type CheckItem = {
   id: string
@@ -56,7 +57,7 @@ function onCheckChange(id: string, checked: boolean) {
     <div class="avanti-progress-banner__main">
       <div class="avanti-progress-banner__top">
         <div class="avanti-progress-banner__icon" aria-hidden="true">
-          <img :src="iconLock" alt="" width="20" height="20" />
+          <AvantiIcon :src="iconLock" size="lg" />
         </div>
 
         <div class="avanti-progress-banner__text">
@@ -103,7 +104,7 @@ function onCheckChange(id: string, checked: boolean) {
       aria-label="Continua"
       @click="onClick"
     >
-      <img :src="iconArrow" alt="" width="16" height="16" />
+      <AvantiIcon :src="iconArrow" size="md" />
     </button>
   </section>
 </template>
@@ -148,10 +149,7 @@ function onCheckChange(id: string, checked: boolean) {
   box-shadow: var(--avanti-shadow-icon);
 }
 
-.avanti-progress-banner__icon img {
-  width: 20px;
-  height: 20px;
-}
+
 
 .avanti-progress-banner__text {
   display: flex;
@@ -219,11 +217,6 @@ function onCheckChange(id: string, checked: boolean) {
   cursor: pointer;
 }
 
-.avanti-progress-banner__action img {
-  width: 16px;
-  height: 16px;
-}
-
 @media (max-width: 1024px) {
   .avanti-progress-banner {
     padding: calc(var(--avanti-modul) * 2);
@@ -245,7 +238,9 @@ function onCheckChange(id: string, checked: boolean) {
     box-shadow: none;
   }
 
-  .avanti-progress-banner__icon img {
+  .avanti-progress-banner__icon,
+  :deep(.avanti-progress-banner__icon .avanti-icon),
+  :deep(.avanti-progress-banner__icon .avanti-icon img) {
     width: 14px;
     height: 14px;
   }

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AvantiBadge from '@/components/avanti_badge.vue'
+import AvantiIcon from '@/components/avanti_icon.vue'
 
 type Props = {
   label: string
@@ -32,9 +33,12 @@ function onClick() {
     :disabled="disabled"
     @click="onClick"
   >
-    <span v-if="iconSrc" class="avanti-button__icon" aria-hidden="true">
-      <img :src="iconSrc" alt="" width="16" height="16" />
-    </span>
+    <AvantiIcon
+      v-if="iconSrc"
+      class="avanti-button__icon"
+      :src="iconSrc"
+      size="xl"
+    />
     <span class="avanti-button__label">{{ label }}</span>
     <AvantiBadge
       variant="count"
@@ -70,18 +74,8 @@ function onClick() {
 }
 
 .avanti-button__icon {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  overflow: hidden;
-}
-
-.avanti-button__icon img {
-  width: 16px;
-  height: 16px;
+  width: 28px;
+  height: 28px;
 }
 
 .avanti-button__label {

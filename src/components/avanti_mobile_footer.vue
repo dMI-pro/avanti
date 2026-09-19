@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import AvantiMobileFooterItem from '@/components/avanti_mobile_footer_item.vue'
+import AvantiIcon from '@/components/avanti_icon.vue'
 import { MAIN_NAV, ASSISTENZA_ICON } from '@/constants/nav'
 import type { NavId } from '@/types'
 
@@ -55,9 +56,12 @@ function onAssistenzaClick() {
         type="button"
         @click="onAssistenzaClick"
       >
-        <span class="avanti-mobile-footer__assistenza-icon" aria-hidden="true">
-          <img :src="ASSISTENZA_ICON" alt="" width="14" height="14" />
-        </span>
+        <AvantiIcon
+          class="avanti-mobile-footer__assistenza-icon"
+          :src="ASSISTENZA_ICON"
+          :width="14"
+          :height="14"
+        />
         <span class="avanti-mobile-footer__assistenza-label">Assistenza</span>
       </button>
     </nav>
@@ -106,17 +110,8 @@ function onAssistenzaClick() {
   }
 
   .avanti-mobile-footer__assistenza-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 16px;
     height: 16px;
-  }
-
-  .avanti-mobile-footer__assistenza-icon img {
-    width: 14px;
-    height: 14px;
-    object-fit: contain;
   }
 
   .avanti-mobile-footer__assistenza-label {

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import AvantiIcon from '@/components/avanti_icon.vue'
 import type { ProgressStatus } from '@/types'
 
 type Props = {
@@ -25,7 +26,11 @@ const rootClass = computed(() => [
 <template>
   <li class="avanti-step" :class="rootClass">
     <div class="avanti-step__node" aria-hidden="true">
-      <img class="avanti-step__icon" :src="iconSrc" alt="" width="16" height="16" />
+      <AvantiIcon
+        class="avanti-step__icon"
+        :src="iconSrc"
+        size="md"
+      />
     </div>
     <span class="avanti-step__label">{{ label }}</span>
   </li>
@@ -51,11 +56,6 @@ const rootClass = computed(() => [
   width: 36px;
   height: 36px;
   border-radius: 18px;
-}
-
-.avanti-step__icon {
-  width: 16px;
-  height: 16px;
 }
 
 .avanti-step__label {
@@ -120,7 +120,8 @@ const rootClass = computed(() => [
     border-radius: 10px;
   }
 
-  .avanti-step__icon {
+  .avanti-step__icon,
+  :deep(.avanti-step__icon img) {
     width: 12px;
     height: 12px;
   }

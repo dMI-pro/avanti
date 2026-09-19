@@ -17,6 +17,12 @@ type Props = {
   steps?: StepItem[]
 }
 
+const STATUS_ICONS: Record<ProgressStatus, string> = {
+  done: iconCheck,
+  current: iconUpload,
+  pending: iconSign,
+}
+
 const props = withDefaults(defineProps<Props>(), {
   title: 'Passo 4 di 5',
   counter: '3 / 5 completati',
@@ -29,16 +35,10 @@ const props = withDefaults(defineProps<Props>(), {
   ],
 })
 
-function iconForStatus(status: ProgressStatus) {
-  if (status === 'done') return iconCheck
-  if (status === 'current') return iconUpload
-  return iconSign
-}
-
 const trackSteps = computed(() =>
   props.steps.map((step, index) => ({
     ...step,
-    iconSrc: iconForStatus(step.status),
+    iconSrc: STATUS_ICONS[step.status],
     showLineAfter: index < props.steps.length - 1,
     lineAfterActive: step.status === 'done',
   })),

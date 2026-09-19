@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AvantiBadge from '@/components/avanti_badge.vue'
+import AvantiIcon from '@/components/avanti_icon.vue'
 import iconBank from '@/assets/icons/icon-bank.svg'
 
 type Props = {
@@ -61,12 +62,10 @@ function onCtaClick() {
       @click="onCtaClick"
     >
       <span class="avanti-balance-card__cta-main">
-        <img
+        <AvantiIcon
           class="avanti-balance-card__cta-icon"
           :src="iconBank"
-          alt=""
-          width="28"
-          height="28"
+          size="xl"
         />
         <span class="avanti-balance-card__cta-label">{{ ctaLabel }}</span>
       </span>
@@ -175,8 +174,6 @@ function onCtaClick() {
 }
 
 .avanti-balance-card__cta-icon {
-  width: 28px;
-  height: 28px;
   flex-shrink: 0;
 }
 
@@ -264,7 +261,8 @@ function onCtaClick() {
     gap: calc(var(--avanti-modul) * 1.5);
   }
 
-  .avanti-balance-card__cta-icon {
+  .avanti-balance-card__cta-icon,
+  :deep(.avanti-balance-card__cta-icon img) {
     width: 20px;
     height: 20px;
   }

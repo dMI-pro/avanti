@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AvantiIcon from '@/components/avanti_icon.vue'
 import type { ProgressStatus } from '@/types'
 
 type Props = {
@@ -27,16 +28,21 @@ function onClick() {
     type="button"
     @click="onClick"
   >
-    <span class="avanti-checklist-item__icon" aria-hidden="true">
-      <img :src="iconSrc" alt="" width="20" height="20" />
-    </span>
+    <AvantiIcon
+      class="avanti-checklist-item__icon"
+      :src="iconSrc"
+      size="lg"
+    />
     <span class="avanti-checklist-item__text">
       <span class="avanti-checklist-item__title">{{ title }}</span>
       <span class="avanti-checklist-item__status">{{ statusText }}</span>
     </span>
-    <span class="avanti-checklist-item__action" aria-hidden="true">
-      <img :src="actionIconSrc" alt="" width="14" height="14" />
-    </span>
+    <AvantiIcon
+      class="avanti-checklist-item__action"
+      :src="actionIconSrc"
+      :width="13"
+      :height="13"
+    />
   </button>
 
   <div
@@ -44,16 +50,21 @@ function onClick() {
     class="avanti-checklist-item"
     :class="`avanti-checklist-item--${status}`"
   >
-    <span class="avanti-checklist-item__icon" aria-hidden="true">
-      <img :src="iconSrc" alt="" width="20" height="20" />
-    </span>
+    <AvantiIcon
+      class="avanti-checklist-item__icon"
+      :src="iconSrc"
+      size="lg"
+    />
     <span class="avanti-checklist-item__text">
       <span class="avanti-checklist-item__title">{{ title }}</span>
       <span class="avanti-checklist-item__status">{{ statusText }}</span>
     </span>
-    <span class="avanti-checklist-item__action" aria-hidden="true">
-      <img :src="actionIconSrc" alt="" width="14" height="14" />
-    </span>
+    <AvantiIcon
+      class="avanti-checklist-item__action"
+      :src="actionIconSrc"
+      :width="13"
+      :height="13"
+    />
   </div>
 </template>
 
@@ -81,11 +92,6 @@ button.avanti-checklist-item {
   width: 44px;
   height: 44px;
   border-radius: 22px;
-}
-
-.avanti-checklist-item__icon img {
-  width: 20px;
-  height: 20px;
 }
 
 .avanti-checklist-item__text {
@@ -118,11 +124,6 @@ button.avanti-checklist-item {
   width: 28px;
   height: 28px;
   border-radius: 14px;
-}
-
-.avanti-checklist-item__action img {
-  width: 13px;
-  height: 13px;
 }
 
 .avanti-checklist-item--done .avanti-checklist-item__icon,
@@ -173,7 +174,8 @@ button.avanti-checklist-item {
     border-radius: 18px;
   }
 
-  .avanti-checklist-item__icon img {
+  .avanti-checklist-item__icon,
+  :deep(.avanti-checklist-item__icon img) {
     width: 16px;
     height: 16px;
   }
@@ -196,7 +198,8 @@ button.avanti-checklist-item {
     border-radius: 11px;
   }
 
-  .avanti-checklist-item--done .avanti-checklist-item__action img {
+  .avanti-checklist-item--done .avanti-checklist-item__action,
+  .avanti-checklist-item--done :deep(.avanti-checklist-item__action img) {
     width: 10px;
     height: 10px;
   }

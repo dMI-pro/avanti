@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import AvantiIcon from '@/components/avanti_icon.vue'
+
 type Props = {
   label: string
   iconSrc: string
@@ -25,9 +27,11 @@ function onClick() {
     :class="{ 'avanti-nav-item--active': props.active }"
     @click="onClick"
   >
-    <span class="avanti-nav-item__icon" aria-hidden="true">
-      <img :src="iconSrc" alt="" width="16" height="16" />
-    </span>
+    <AvantiIcon
+      class="avanti-nav-item__icon"
+      :src="iconSrc"
+      size="md"
+    />
     <span class="avanti-nav-item__label">{{ label }}</span>
   </button>
 </template>
@@ -59,16 +63,6 @@ function onClick() {
 }
 
 .avanti-nav-item__icon {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  overflow: hidden;
-}
-
-.avanti-nav-item__icon img {
   width: 16px;
   height: 16px;
 }

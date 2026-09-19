@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import AvantiIcon from '@/components/avanti_icon.vue'
+
 type Props = {
   label: string
   iconSrc: string
@@ -25,9 +27,12 @@ function onClick() {
     :class="{ 'avanti-mobile-footer-item--active': active }"
     @click="onClick"
   >
-    <span class="avanti-mobile-footer-item__icon" aria-hidden="true">
-      <img :src="iconSrc" alt="" width="18" height="18" />
-    </span>
+    <AvantiIcon
+      class="avanti-mobile-footer-item__icon"
+      :src="iconSrc"
+      :width="18"
+      :height="18"
+    />
     <span class="avanti-mobile-footer-item__label">{{ label }}</span>
   </button>
 </template>
@@ -53,17 +58,8 @@ function onClick() {
 }
 
 .avanti-mobile-footer-item__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 20px;
   height: 20px;
-}
-
-.avanti-mobile-footer-item__icon img {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
 }
 
 .avanti-mobile-footer-item__label {
