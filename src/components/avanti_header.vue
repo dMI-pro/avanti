@@ -9,8 +9,7 @@ import AvantiNavItem from '@/components/avanti_nav_item.vue'
 import AvantiButton from '@/components/avanti_button.vue'
 import AvantiNotificationBell from '@/components/avanti_notification_bell.vue'
 import AvantiHeaderProfile from '@/components/avanti_header_profile.vue'
-
-type NavId = 'home' | 'documenti' | 'profilo'
+import type { NavId } from '@/types'
 
 type Props = {
   activeNav?: NavId

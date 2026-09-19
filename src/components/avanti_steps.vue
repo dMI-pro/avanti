@@ -4,12 +4,11 @@ import iconCheck from '@/assets/icons/step-check.svg'
 import iconUpload from '@/assets/icons/step-upload.svg'
 import iconSign from '@/assets/icons/step-sign.svg'
 import AvantiStep from '@/components/avanti_step.vue'
-
-type StepStatus = 'done' | 'current' | 'pending'
+import type { ProgressStatus } from '@/types'
 
 type StepItem = {
   label: string
-  status: StepStatus
+  status: ProgressStatus
 }
 
 type Props = {
@@ -30,7 +29,7 @@ const props = withDefaults(defineProps<Props>(), {
   ],
 })
 
-function iconForStatus(status: StepStatus) {
+function iconForStatus(status: ProgressStatus) {
   if (status === 'done') return iconCheck
   if (status === 'current') return iconUpload
   return iconSign

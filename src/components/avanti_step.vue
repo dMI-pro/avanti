@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-
-type StepStatus = 'done' | 'current' | 'pending'
+import type { ProgressStatus } from '@/types'
 
 type Props = {
   label: string
-  status: StepStatus
+  status: ProgressStatus
   iconSrc: string
   showLineAfter?: boolean
   lineAfterActive?: boolean

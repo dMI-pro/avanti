@@ -1,10 +1,10 @@
 <script setup lang="ts">
-type ItemStatus = 'done' | 'current' | 'pending'
+import type { ProgressStatus } from '@/types'
 
 type Props = {
   title: string
   statusText: string
-  status: ItemStatus
+  status: ProgressStatus
   iconSrc: string
   actionIconSrc: string
 }

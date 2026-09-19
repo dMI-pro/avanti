@@ -10,14 +10,13 @@ import iconStatusCheck from '@/assets/icons/icon-status-check.svg'
 import iconArrowCircle from '@/assets/icons/icon-arrow-circle.svg'
 import iconArrowMuted from '@/assets/icons/icon-arrow-muted.svg'
 import AvantiChecklistItem from '@/components/avanti_checklist_item.vue'
-
-type ItemStatus = 'done' | 'current' | 'pending'
+import type { ProgressStatus } from '@/types'
 
 type ChecklistItem = {
   id: string
   title: string
   statusText: string
-  status: ItemStatus
+  status: ProgressStatus
   iconSrc: string
   actionIconSrc: string
 }

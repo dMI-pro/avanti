@@ -6,8 +6,7 @@ import AvantiPageToolbar from '@/components/avanti_page_toolbar.vue'
 import AvantiHomeLayout from '@/components/avanti_home_layout.vue'
 import AvantiMobileFooter from '@/components/avanti_mobile_footer.vue'
 import AvantiMobileMessagesList from '@/components/avanti_mobile_messages_list.vue'
-
-type NavId = 'home' | 'documenti' | 'profilo'
+import type { NavId } from '@/types'
 
 function onNavigate(_id: NavId) {}
 

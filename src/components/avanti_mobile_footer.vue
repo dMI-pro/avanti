@@ -5,8 +5,7 @@ import iconDocs from '@/assets/icons/nav-docs-mobile.svg'
 import iconProfile from '@/assets/icons/nav-profile-mobile.svg'
 import iconChat from '@/assets/icons/nav-chat.svg'
 import AvantiMobileFooterItem from '@/components/avanti_mobile_footer_item.vue'
-
-type NavId = 'home' | 'documenti' | 'profilo'
+import type { NavId } from '@/types'
 
 type Props = {
   activeNav?: NavId

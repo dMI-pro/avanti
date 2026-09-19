@@ -31,3 +31,5 @@ coverage
 *.tsbuildinfo
 AGENTS.md
 /design
+ARCHITECTURE_AUDIT.md
+ARCHITECTURE_CHECKLIST.md
