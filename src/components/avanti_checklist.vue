@@ -170,7 +170,7 @@ function onItemClick(id: string) {
   border: 1px solid var(--avanti-border);
   border-radius: var(--avanti-radius-lg);
   background: var(--avanti-bg);
-  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.03);
+  box-shadow: var(--avanti-shadow-checklist);
 }
 
 .avanti-checklist__header {
@@ -262,7 +262,7 @@ function onItemClick(id: string) {
 }
 
 .avanti-checklist__segment--current {
-  background: linear-gradient(90deg, #2491aa 0%, #e4e4e7 100%);
+  background: var(--avanti-gradient-progress);
 }
 
 .avanti-checklist__segment--pending {

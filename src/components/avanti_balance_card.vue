@@ -123,7 +123,7 @@ function onCtaClick() {
   flex-shrink: 0;
   padding: 4px 10px;
   border-radius: var(--avanti-radius-pill);
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--avanti-white-alpha-20);
   color: var(--avanti-white);
   font-size: 11px;
   font-weight: 700;
@@ -188,7 +188,7 @@ function onCtaClick() {
 
 .avanti-balance-card__cta-label,
 .avanti-balance-card__cta-arrow {
-  background: linear-gradient(180deg, #2491aa 0%, #1a7488 100%);
+  background: var(--avanti-gradient-balance);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -220,7 +220,7 @@ function onCtaClick() {
   flex-shrink: 0;
   width: 100px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.31);
+  background: var(--avanti-white-alpha-31);
 }
 
 .avanti-balance-card__footnote-text {

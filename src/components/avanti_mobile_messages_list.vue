@@ -115,16 +115,16 @@ function onClick() {
 @keyframes avanti-mobile-messages-list-pulse {
   0%,
   100% {
-    box-shadow: 0 0 4px 1px rgba(36, 145, 170, 0.4);
+    box-shadow: var(--avanti-shadow-pulse-lo);
   }
 
   25%,
   75% {
-    box-shadow: 0 0 14px 4px rgba(36, 145, 170, 0.85);
+    box-shadow: var(--avanti-shadow-pulse-hi);
   }
 
   50% {
-    box-shadow: 0 0 4px 1px rgba(36, 145, 170, 0.4);
+    box-shadow: var(--avanti-shadow-pulse-lo);
   }
 }
 </style>

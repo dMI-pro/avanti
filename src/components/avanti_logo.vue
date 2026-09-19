@@ -43,7 +43,7 @@ withDefaults(defineProps<Props>(), {
   font-weight: 700;
   line-height: 1;
   letter-spacing: -1.6px;
-  color: #000;
+  color: var(--avanti-logo-black);
   white-space: nowrap;
 }
 

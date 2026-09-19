@@ -107,7 +107,7 @@ function onCheckChange(id: string, checked: boolean) {
   border: 1px solid var(--avanti-teal-border);
   border-radius: var(--avanti-radius-lg);
   background: var(--avanti-teal-soft);
-  font-family: Geist, Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--avanti-font-accent);
 }
 
 .avanti-progress-banner__main {
