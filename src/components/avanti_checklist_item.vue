@@ -121,8 +121,8 @@ button.avanti-checklist-item {
 }
 
 .avanti-checklist-item__action img {
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
 }
 
 .avanti-checklist-item--done .avanti-checklist-item__icon,

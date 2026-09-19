@@ -107,6 +107,7 @@ function onCheckChange(id: string, checked: boolean) {
   border: 1px solid var(--avanti-teal-border);
   border-radius: var(--avanti-radius-lg);
   background: var(--avanti-teal-soft);
+  font-family: Geist, Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .avanti-progress-banner__main {
@@ -204,7 +205,7 @@ function onCheckChange(id: string, checked: boolean) {
 .avanti-progress-banner__checks {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .avanti-progress-banner__action {
@@ -274,10 +275,6 @@ function onCheckChange(id: string, checked: boolean) {
 
   .avanti-progress-banner__bottom {
     padding-left: 0;
-  }
-
-  .avanti-progress-banner__checks {
-    gap: 8px;
   }
 
   .avanti-progress-banner__action {
