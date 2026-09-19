@@ -6,6 +6,11 @@ import AvantiPageToolbar from '@/components/avanti_page_toolbar.vue'
 import AvantiHomeLayout from '@/components/avanti_home_layout.vue'
 import AvantiMobileFooter from '@/components/avanti_mobile_footer.vue'
 import AvantiMobileMessagesList from '@/components/avanti_mobile_messages_list.vue'
+import AvantiSteps from '@/components/avanti_steps.vue'
+import AvantiBalanceCard from '@/components/avanti_balance_card.vue'
+import AvantiProgressBanner from '@/components/avanti_progress_banner.vue'
+import AvantiPersonalData from '@/components/avanti_personal_data.vue'
+import AvantiChecklist from '@/components/avanti_checklist.vue'
 import type { NavId } from '@/types'
 
 function onNavigate(_id: NavId) {}
@@ -40,7 +45,15 @@ function onMessages() {}
           breadcrumb-current="Home"
         />
       </div>
-      <AvantiHomeLayout />
+      <AvantiHomeLayout>
+        <template #left>
+          <AvantiSteps />
+          <AvantiBalanceCard />
+          <AvantiProgressBanner />
+        </template>
+        <template #right-top><AvantiPersonalData /></template>
+        <template #right-bottom><AvantiChecklist /></template>
+      </AvantiHomeLayout>
     </main>
     <AvantiMobileMessagesList :avatar-src="avatarSupport" :badge="2" @click="onMessages" />
     <AvantiMobileFooter active-nav="home" @navigate="onNavigate" @assistenza="onAssistenza" />

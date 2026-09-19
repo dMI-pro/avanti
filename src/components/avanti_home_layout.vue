@@ -1,24 +1,17 @@
 <script setup lang="ts">
-import AvantiSteps from '@/components/avanti_steps.vue'
-import AvantiBalanceCard from '@/components/avanti_balance_card.vue'
-import AvantiProgressBanner from '@/components/avanti_progress_banner.vue'
-import AvantiPersonalData from '@/components/avanti_personal_data.vue'
-import AvantiChecklist from '@/components/avanti_checklist.vue'
 </script>
 
 <template>
   <div class="avanti-home-layout">
     <div class="avanti-home-layout__left">
-      <AvantiSteps />
-      <AvantiBalanceCard />
-      <AvantiProgressBanner />
+      <slot name="left" />
     </div>
 
     <div class="avanti-home-layout__right">
       <div class="avanti-home-layout__personal">
-        <AvantiPersonalData />
+        <slot name="right-top" />
       </div>
-      <AvantiChecklist />
+      <slot name="right-bottom" />
     </div>
   </div>
 </template>
