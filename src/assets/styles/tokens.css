@@ -1,0 +1,64 @@
+:root {
+  --avanti-modul: 8px;
+
+  --avanti-teal: #2491aa;
+  --avanti-teal-dark: #1a7488;
+  --avanti-teal-soft: #eaf4f6;
+  --avanti-teal-border: #c7e3ea;
+  --avanti-teal-muted-border: #e2edf0;
+
+  --avanti-ink: #1a2332;
+  --avanti-logo-black: #000000;
+  --avanti-muted: #71717a;
+  --avanti-muted-2: #a1a1aa;
+  --avanti-zinc-line: #d4d4d8;
+  --avanti-zinc-bg: #f4f4f5;
+  --avanti-divider: #f0f2f5;
+  --avanti-border: #e4e4e7;
+
+  --avanti-bg: #ffffff;
+  --avanti-bg-page: #f8fafb;
+  --avanti-white: #ffffff;
+
+  --avanti-danger: #ef4444;
+  --avanti-badge-dark-red: #9a0606;
+
+  --avanti-white-alpha-20: rgba(255, 255, 255, 0.2);
+  --avanti-white-alpha-31: rgba(255, 255, 255, 0.31);
+  --avanti-teal-alpha-40: rgba(36, 145, 170, 0.4);
+  --avanti-teal-alpha-85: rgba(36, 145, 170, 0.85);
+  --avanti-ink-alpha-6: rgba(26, 35, 50, 0.06);
+  --avanti-ink-alpha-3: rgba(26, 35, 50, 0.03);
+  --avanti-teal-alpha-19: rgba(36, 145, 170, 0.19);
+  --avanti-teal-alpha-25: rgba(36, 145, 170, 0.25);
+
+  --avanti-radius-sm: var(--avanti-modul);
+  --avanti-radius-md: calc(var(--avanti-modul) * 1.75);
+  --avanti-radius-lg: calc(var(--avanti-modul) * 2);
+  --avanti-radius-xl: calc(var(--avanti-modul) * 2.5);
+  --avanti-radius-pill: 99px;
+  --avanti-radius-circle: 50%;
+
+  --avanti-desktop-width: 1440px;
+  --avanti-mobile-width: 390px;
+  --avanti-desktop-gutter: calc(var(--avanti-modul) * 9);
+  --avanti-desktop-gap-cols: calc(var(--avanti-modul) * 5);
+  --avanti-left-col: 792px;
+  --avanti-right-col: 464px;
+  --avanti-mobile-pad: calc(var(--avanti-modul) * 2);
+
+  --avanti-font-stack-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --avanti-font-primary: Inter, var(--avanti-font-stack-base);
+  --avanti-font-accent: Geist, var(--avanti-font-primary);
+
+  --avanti-shadow-card: 0 calc(var(--avanti-modul) * 0.25) calc(var(--avanti-modul) * 0.5) var(--avanti-ink-alpha-6);
+  --avanti-shadow-balance: 0 var(--avanti-modul) calc(var(--avanti-modul) * 1.5) var(--avanti-teal-alpha-19);
+  --avanti-shadow-icon: 0 calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 0.5) var(--avanti-teal-alpha-19);
+  --avanti-shadow-cta: 0 calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 0.5) var(--avanti-teal-alpha-25);
+  --avanti-shadow-checklist: 0 calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 2) var(--avanti-ink-alpha-3);
+  --avanti-shadow-pulse-lo: 0 0 calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 0.125) var(--avanti-teal-alpha-40);
+  --avanti-shadow-pulse-hi: 0 0 calc(var(--avanti-modul) * 1.75) calc(var(--avanti-modul) * 0.5) var(--avanti-teal-alpha-85);
+
+  --avanti-gradient-balance: linear-gradient(180deg, var(--avanti-teal) 0%, var(--avanti-teal-dark) 100%);
+  --avanti-gradient-progress: linear-gradient(90deg, var(--avanti-teal) 0%, var(--avanti-border) 100%);
+}
