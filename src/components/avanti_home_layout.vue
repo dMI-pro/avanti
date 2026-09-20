@@ -22,7 +22,6 @@
   align-items: flex-start;
   gap: var(--avanti-desktop-gap-cols);
   width: 100%;
-  margin-top: calc(var(--avanti-modul) * 2.5);
   padding-bottom: calc(var(--avanti-modul) * 5);
 }
 

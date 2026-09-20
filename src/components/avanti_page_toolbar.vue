@@ -27,6 +27,7 @@ defineProps<Props>()
   justify-content: space-between;
   gap: calc(var(--avanti-modul) * 3);
   width: 100%;
+  margin-bottom: calc(var(--avanti-modul) * 2.5);
   padding: calc(var(--avanti-modul) * 1.25) 0;
   background: var(--avanti-bg-page);
 }

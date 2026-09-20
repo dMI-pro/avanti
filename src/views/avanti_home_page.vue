@@ -98,7 +98,7 @@ function onMessages() {}
   }
 
   .avanti-home-page__main {
-    padding: calc(var(--avanti-modul) * 2) var(--avanti-mobile-pad) calc(var(--avanti-modul) * 10.75);
+    padding: calc(var(--avanti-modul) * 2) var(--avanti-mobile-pad) calc(var(--avanti-modul) * 7.25);
   }
 }
 </style>
