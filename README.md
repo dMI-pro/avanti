@@ -2,11 +2,6 @@
 
 Фронтенд на **Vue 3** + **Vite** + **TypeScript**.
 
-## Требования
-
-- Node.js `^22.18.0` или `>=24.12.0`
-- npm (идёт вместе с Node)
-
 ## Установка
 
 ```sh
@@ -33,8 +28,18 @@ npm install
 
 Алиас `@` → `src/`.
 
-## IDE
+## Структура `src/`
 
-Рекомендуется [VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (Vetur отключить).
+```
+src/
+  components/   # UI-компоненты, avanti_<назначение>.vue
+  views/        # Страницы-агрегаторы (avanti_home_page.vue)
+  mocks/        # Предметные данные экранов (home.ts)
+  constants/    # Статические справочники (nav.ts)
+  assets/       # icons / images / styles (tokens.css — базовый модуль 8px)
+  types.ts      # Общие TS-типы проекта
+```
 
-Для отладки в браузере — [Vue.js DevTools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd).
+## UI-кит
+
+Токены: `assets/styles/tokens.css` — базовый модуль `--avanti-modul: 8px`, все spacing/размеры через `calc(var(--avanti-modul) * N)`.
