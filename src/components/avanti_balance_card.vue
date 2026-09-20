@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import AvantiBadge from '@/components/avanti_badge.vue'
 import AvantiIcon from '@/components/avanti_icon.vue'
-import iconBank from '@/assets/icons/icon-bank.svg'
+import iconBankDefault from '@/assets/icons/icon-bank.svg'
+import iconArrowRightDefault from '@/assets/icons/icon-arrow-right.svg'
 
 type Props = {
   title?: string
@@ -9,7 +11,9 @@ type Props = {
   subtitle?: string
   amount?: string
   meta?: string
+  ctaIconSrc?: string
   ctaLabel?: string
+  ctaArrowSrc?: string
   footnote?: string
   ctaDisabled?: boolean
 }
@@ -20,10 +24,15 @@ const props = withDefaults(defineProps<Props>(), {
   subtitle: '',
   amount: '',
   meta: '',
+  ctaIconSrc: '',
   ctaLabel: '',
+  ctaArrowSrc: '',
   footnote: '',
   ctaDisabled: false,
 })
+
+const resolvedCtaIconSrc = computed(() => props.ctaIconSrc || iconBankDefault)
+const resolvedCtaArrowSrc = computed(() => props.ctaArrowSrc || iconArrowRightDefault)
 
 const emit = defineEmits<{
   ctaClick: []
@@ -64,12 +73,16 @@ function onCtaClick() {
       <span class="avanti-balance-card__cta-main">
         <AvantiIcon
           class="avanti-balance-card__cta-icon"
-          :src="iconBank"
+          :src="resolvedCtaIconSrc"
           size="xl"
         />
         <span class="avanti-balance-card__cta-label">{{ ctaLabel }}</span>
       </span>
-      <span class="avanti-balance-card__cta-arrow" aria-hidden="true">→</span>
+      <AvantiIcon
+        class="avanti-balance-card__cta-arrow"
+        :src="resolvedCtaArrowSrc"
+        size="md"
+      />
     </button>
 
     <div class="avanti-balance-card__footnote">
@@ -177,25 +190,22 @@ function onCtaClick() {
   flex-shrink: 0;
 }
 
-.avanti-balance-card__cta-label,
-.avanti-balance-card__cta-arrow {
+.avanti-balance-card__cta-label {
   background: var(--avanti-gradient-balance);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.00225rem;
   line-height: normal;
   white-space: nowrap;
 }
 
-.avanti-balance-card__cta-label {
-  font-size: 1.125rem;
-  font-weight: 600;
-  letter-spacing: 0.00225rem;
-}
-
 .avanti-balance-card__cta-arrow {
-  font-size: 1.125rem;
-  font-weight: 500;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
   opacity: 0.85;
 }
 
@@ -269,6 +279,11 @@ function onCtaClick() {
   .avanti-balance-card__cta-label {
     font-size: 1rem;
     letter-spacing: 0.002rem;
+  }
+
+  .avanti-balance-card__cta-arrow {
+    width: 14px;
+    height: 14px;
   }
 
   .avanti-balance-card__footnote {

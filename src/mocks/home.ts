@@ -6,6 +6,8 @@ import iconPen from '@/assets/icons/icon-pen.svg'
 import iconStatusCheck from '@/assets/icons/icon-status-check.svg'
 import iconArrowCircle from '@/assets/icons/icon-arrow-circle.svg'
 import iconArrowMuted from '@/assets/icons/icon-arrow-muted.svg'
+import iconBank from '@/assets/icons/icon-bank.svg'
+import iconArrowRightGradient from '@/assets/icons/icon-arrow-right-gradient.svg'
 import iconCheck from '@/assets/icons/step-check.svg'
 import iconUploadStep from '@/assets/icons/step-upload.svg'
 import iconSign from '@/assets/icons/step-sign.svg'
@@ -17,7 +19,9 @@ export type BalanceCardMock = {
   subtitle?: string
   amount?: string
   meta?: string
+  ctaIconSrc?: string
   ctaLabel?: string
+  ctaArrowSrc?: string
   footnote?: string
   ctaDisabled?: boolean
 }
@@ -85,7 +89,9 @@ export const balanceCardMock: BalanceCardMock = {
   subtitle: 'Importo approvato dai nostri partner',
   amount: '€ 12 000',
   meta: 'Prestito personale • TAN 3,8%',
+  ctaIconSrc: iconBank,
   ctaLabel: 'Preleva i fondi',
+  ctaArrowSrc: iconArrowRightGradient,
   footnote: "Fondi disponibili dopo l'approvazione dei documenti",
   ctaDisabled: true,
 }
