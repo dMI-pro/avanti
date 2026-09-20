@@ -69,11 +69,11 @@ function onClick() {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 57px;
-    height: 57px;
+    width: calc(var(--avanti-modul) * 7.125);
+    height: calc(var(--avanti-modul) * 7.125);
     margin: 0;
     padding: 0;
-    border: 1.8px solid var(--avanti-teal);
+    border: calc(var(--avanti-modul) * 0.225) solid var(--avanti-teal);
     border-radius: var(--avanti-radius-circle);
     background: transparent;
     cursor: pointer;

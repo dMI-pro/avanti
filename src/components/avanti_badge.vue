@@ -86,27 +86,27 @@ const rootStyle = computed<Record<string, string>>(() => {
 }
 
 .avanti-badge--variant-count.avanti-badge--size-sm {
-  min-width: 12px;
-  height: 12px;
-  padding: 0 3px;
+  min-width: calc(var(--avanti-modul) * 1.5);
+  height: calc(var(--avanti-modul) * 1.5);
+  padding: 0 calc(var(--avanti-modul) * 0.375);
   font-size: 0.375rem;
   line-height: 1;
-  border-radius: 6px;
+  border-radius: calc(var(--avanti-modul) * 0.75);
 }
 
 .avanti-badge--variant-count.avanti-badge--size-md {
-  width: 22px;
-  height: 22px;
+  width: calc(var(--avanti-modul) * 2.75);
+  height: calc(var(--avanti-modul) * 2.75);
   font-size: 0.6875rem;
-  border-radius: 11px;
+  border-radius: calc(var(--avanti-modul) * 1.375);
 }
 
 .avanti-badge--variant-count.avanti-badge--size-lg {
-  width: 28px;
-  height: 28px;
+  width: calc(var(--avanti-modul) * 3.5);
+  height: calc(var(--avanti-modul) * 3.5);
   font-size: 1.125rem;
   line-height: 1;
-  border-radius: 18px;
+  border-radius: calc(var(--avanti-modul) * 2.25);
 }
 
 /* =============== variant = pill =============== */

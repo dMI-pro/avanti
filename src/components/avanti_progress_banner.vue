@@ -139,9 +139,9 @@ function onCheckChange(id: string, checked: boolean) {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 22px;
+  width: calc(var(--avanti-modul) * 5.5);
+  height: calc(var(--avanti-modul) * 5.5);
+  border-radius: calc(var(--avanti-modul) * 2.75);
   background: var(--avanti-teal);
   box-shadow: var(--avanti-shadow-icon);
 }
@@ -205,10 +205,10 @@ function onCheckChange(id: string, checked: boolean) {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: calc(var(--avanti-modul) * 4.5);
+  height: calc(var(--avanti-modul) * 4.5);
   border: none;
-  border-radius: 18px;
+  border-radius: calc(var(--avanti-modul) * 2.25);
   background: var(--avanti-teal);
   box-shadow: var(--avanti-shadow-cta);
   cursor: pointer;
@@ -229,15 +229,15 @@ function onCheckChange(id: string, checked: boolean) {
   }
 
   .avanti-progress-banner__icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
+    width: calc(var(--avanti-modul) * 4);
+    height: calc(var(--avanti-modul) * 4);
+    border-radius: calc(var(--avanti-modul) * 2);
     box-shadow: none;
   }
 
   .avanti-progress-banner__icon :deep(.avanti-icon) {
-    width: 14px;
-    height: 14px;
+    width: calc(var(--avanti-modul) * 1.75);
+    height: calc(var(--avanti-modul) * 1.75);
   }
 
   .avanti-progress-banner__text {

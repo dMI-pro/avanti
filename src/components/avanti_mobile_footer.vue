@@ -81,7 +81,7 @@ function onAssistenzaClick() {
     left: 0;
     z-index: 50;
     display: block;
-    border-top: 2px solid var(--avanti-teal);
+    border-top: calc(var(--avanti-modul) * 0.25) solid var(--avanti-teal);
     background: var(--avanti-bg);
   }
 
@@ -89,7 +89,7 @@ function onAssistenzaClick() {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 62px;
+    height: calc(var(--avanti-modul) * 7.75);
     padding: 0 calc(var(--avanti-modul) * 2.5);
   }
 
@@ -100,8 +100,8 @@ function onAssistenzaClick() {
     align-items: center;
     justify-content: center;
     gap: calc(var(--avanti-modul) * 0.5);
-    width: 108px;
-    height: 43px;
+    width: calc(var(--avanti-modul) * 13.5);
+    height: calc(var(--avanti-modul) * 5.375);
     padding: calc(var(--avanti-modul) * 0.5) calc(var(--avanti-modul) * 2);
     border: none;
     border-radius: var(--avanti-radius-sm);
@@ -110,8 +110,8 @@ function onAssistenzaClick() {
   }
 
   .avanti-mobile-footer__assistenza-icon {
-    width: 16px;
-    height: 16px;
+    width: calc(var(--avanti-modul) * 2);
+    height: calc(var(--avanti-modul) * 2);
   }
 
   .avanti-mobile-footer__assistenza-label {

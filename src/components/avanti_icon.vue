@@ -80,22 +80,22 @@ const imgStyle = computed<Record<string, string>>(() => {
 }
 
 .avanti-icon--size-sm {
-  width: 14px;
-  height: 14px;
+  width: calc(var(--avanti-modul) * 1.75);
+  height: calc(var(--avanti-modul) * 1.75);
 }
 
 .avanti-icon--size-md {
-  width: 16px;
-  height: 16px;
+  width: calc(var(--avanti-modul) * 2);
+  height: calc(var(--avanti-modul) * 2);
 }
 
 .avanti-icon--size-lg {
-  width: 20px;
-  height: 20px;
+  width: calc(var(--avanti-modul) * 2.5);
+  height: calc(var(--avanti-modul) * 2.5);
 }
 
 .avanti-icon--size-xl {
-  width: 28px;
-  height: 28px;
+  width: calc(var(--avanti-modul) * 3.5);
+  height: calc(var(--avanti-modul) * 3.5);
 }
 </style>

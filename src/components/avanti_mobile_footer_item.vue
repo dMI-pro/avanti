@@ -58,8 +58,8 @@ function onClick() {
 }
 
 .avanti-mobile-footer-item__icon {
-  width: 20px;
-  height: 20px;
+  width: calc(var(--avanti-modul) * 2.5);
+  height: calc(var(--avanti-modul) * 2.5);
 }
 
 .avanti-mobile-footer-item__label {

@@ -53,9 +53,9 @@ const rootClass = computed(() => [
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 18px;
+  width: calc(var(--avanti-modul) * 4.5);
+  height: calc(var(--avanti-modul) * 4.5);
+  border-radius: calc(var(--avanti-modul) * 2.25);
 }
 
 .avanti-step__label {
@@ -75,7 +75,7 @@ const rootClass = computed(() => [
 }
 
 .avanti-step--current .avanti-step__node {
-  border: 2px solid var(--avanti-teal);
+  border: calc(var(--avanti-modul) * 0.25) solid var(--avanti-teal);
   background: var(--avanti-teal-soft);
 }
 
@@ -101,7 +101,7 @@ const rootClass = computed(() => [
   left: calc(50% + 22px);
   right: calc(-50% + 22px);
   z-index: 0;
-  height: 2px;
+  height: calc(var(--avanti-modul) * 0.25);
   background: var(--avanti-zinc-line);
 }
 
@@ -115,14 +115,14 @@ const rootClass = computed(() => [
   }
 
   .avanti-step__node {
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
+    width: calc(var(--avanti-modul) * 2.5);
+    height: calc(var(--avanti-modul) * 2.5);
+    border-radius: calc(var(--avanti-modul) * 1.25);
   }
 
   :deep(.avanti-step__icon) {
-    width: 12px;
-    height: 12px;
+    width: calc(var(--avanti-modul) * 1.5);
+    height: calc(var(--avanti-modul) * 1.5);
   }
 
   .avanti-step__label {

@@ -63,8 +63,8 @@ function onClick() {
 }
 
 .avanti-nav-item__icon {
-  width: 16px;
-  height: 16px;
+  width: calc(var(--avanti-modul) * 2);
+  height: calc(var(--avanti-modul) * 2);
 }
 
 .avanti-nav-item__label {

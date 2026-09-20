@@ -204,8 +204,8 @@ function onCtaClick() {
 
 .avanti-balance-card__cta-arrow {
   flex-shrink: 0;
-  width: 16px;
-  height: 16px;
+  width: calc(var(--avanti-modul) * 2);
+  height: calc(var(--avanti-modul) * 2);
   opacity: 0.85;
 }
 
@@ -237,43 +237,35 @@ function onCtaClick() {
     gap: calc(var(--avanti-modul) * 1.5);
     padding: calc(var(--avanti-modul) * 2.5);
   }
-
   .avanti-balance-card__meta {
     gap: var(--avanti-modul);
   }
-
   .avanti-balance-card__title {
     font-weight: 300;
   }
-
   .avanti-balance-card__subtitle {
     max-width: 150px;
     font-size: 0.625rem;
     letter-spacing: 0.00625rem;
   }
-
   .avanti-balance-card__amount {
     font-size: 2.25rem;
     letter-spacing: -0.03375rem;
   }
-
   .avanti-balance-card__loan {
     font-size: 0.75rem;
   }
-
   .avanti-balance-card__cta {
     gap: calc(var(--avanti-modul) * 0.5);
     padding: calc(var(--avanti-modul) * 1.5) calc(var(--avanti-modul) * 3);
     border-radius: 9px;
   }
-
   .avanti-balance-card__cta-main {
     gap: calc(var(--avanti-modul) * 1.5);
   }
-
   .avanti-balance-card__cta-icon {
-    width: 20px;
-    height: 20px;
+    width: calc(var(--avanti-modul) * 2.5);
+    height: calc(var(--avanti-modul) * 2.5);
   }
 
   .avanti-balance-card__cta-label {
@@ -282,20 +274,17 @@ function onCtaClick() {
   }
 
   .avanti-balance-card__cta-arrow {
-    width: 14px;
-    height: 14px;
+    width: calc(var(--avanti-modul) * 1.75);
+    height: calc(var(--avanti-modul) * 1.75);
   }
-
   .avanti-balance-card__footnote {
     justify-content: center;
     gap: 0;
     padding-top: 0;
   }
-
   .avanti-balance-card__footnote-line {
     display: none;
   }
-
   .avanti-balance-card__footnote-text {
     flex: 1 1 auto;
     font-weight: 500;

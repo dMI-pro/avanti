@@ -32,8 +32,8 @@ withDefaults(defineProps<Props>(), {
 }
 
 .avanti-logo__mark {
-  width: 48px;
-  height: 38px;
+  width: calc(var(--avanti-modul) * 6);
+  height: calc(var(--avanti-modul) * 4.75);
   flex-shrink: 0;
   object-fit: contain;
 }

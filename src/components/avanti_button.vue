@@ -74,8 +74,8 @@ function onClick() {
 }
 
 .avanti-button__icon {
-  width: 28px;
-  height: 28px;
+  width: calc(var(--avanti-modul) * 3.5);
+  height: calc(var(--avanti-modul) * 3.5);
 }
 
 .avanti-button__label {

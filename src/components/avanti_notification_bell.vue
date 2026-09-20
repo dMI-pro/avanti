@@ -57,8 +57,8 @@ function onClick() {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: calc(var(--avanti-modul) * 4.75);
+  height: calc(var(--avanti-modul) * 4.75);
   padding: 0;
   border: none;
   border-radius: 6px;
@@ -68,7 +68,7 @@ function onClick() {
 }
 
 .avanti-notification-bell__icon {
-  width: 21px;
-  height: 26px;
+  width: calc(var(--avanti-modul) * 2.625);
+  height: calc(var(--avanti-modul) * 3.25);
 }
 </style>
