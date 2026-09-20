@@ -15,14 +15,14 @@ type Props = {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  title: 'Il tuo saldo',
-  badge: 'Completa i passaggi',
-  subtitle: 'Importo approvato dai nostri partner',
-  amount: '€ 12 000',
-  meta: 'Prestito personale • TAN 3,8%',
-  ctaLabel: 'Preleva i fondi',
-  footnote: "Fondi disponibili dopo l'approvazione dei documenti",
-  ctaDisabled: true,
+  title: '',
+  badge: '',
+  subtitle: '',
+  amount: '',
+  meta: '',
+  ctaLabel: '',
+  footnote: '',
+  ctaDisabled: false,
 })
 
 const emit = defineEmits<{

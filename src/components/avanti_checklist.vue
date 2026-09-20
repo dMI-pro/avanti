@@ -1,15 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import iconChevron from '@/assets/icons/icon-chevron.svg'
-import iconChart from '@/assets/icons/icon-chart.svg'
-import iconShield from '@/assets/icons/icon-shield.svg'
-import iconUser from '@/assets/icons/icon-user.svg'
-import iconUpload from '@/assets/icons/icon-upload.svg'
-import iconPen from '@/assets/icons/icon-pen.svg'
-import iconStatusCheck from '@/assets/icons/icon-status-check.svg'
-import iconArrowCircle from '@/assets/icons/icon-arrow-circle.svg'
-import iconArrowMuted from '@/assets/icons/icon-arrow-muted.svg'
 import AvantiChecklistItem from '@/components/avanti_checklist_item.vue'
+import AvantiSectionHeader from '@/components/avanti_section_header.vue'
+import AvantiIcon from '@/components/avanti_icon.vue'
 import type { ProgressStatus } from '@/types'
 
 type ChecklistItem = {
@@ -31,53 +25,12 @@ type Props = {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  eyebrow: 'Completa tutti gli step',
-  title: 'Per il prelievo dei fondi, completa tutti gli step',
-  progressSegments: 5,
-  completedSegments: 3,
+  eyebrow: '',
+  title: '',
+  progressSegments: 0,
+  completedSegments: 0,
   defaultExpanded: true,
-  items: () => [
-    {
-      id: 'simulazione',
-      title: 'Simulazione completata',
-      statusText: 'Completato',
-      status: 'done',
-      iconSrc: iconChart,
-      actionIconSrc: iconStatusCheck,
-    },
-    {
-      id: 'credito',
-      title: 'Credito approvato',
-      statusText: 'Completato',
-      status: 'done',
-      iconSrc: iconShield,
-      actionIconSrc: iconStatusCheck,
-    },
-    {
-      id: 'account',
-      title: 'Account creato',
-      statusText: 'Completato',
-      status: 'done',
-      iconSrc: iconUser,
-      actionIconSrc: iconStatusCheck,
-    },
-    {
-      id: 'documenti',
-      title: 'Documenti caricati',
-      statusText: 'Step attuale • Azione richiesta',
-      status: 'current',
-      iconSrc: iconUpload,
-      actionIconSrc: iconArrowCircle,
-    },
-    {
-      id: 'contratto',
-      title: 'Contratto firmato',
-      statusText: 'In attesa',
-      status: 'pending',
-      iconSrc: iconPen,
-      actionIconSrc: iconArrowMuted,
-    },
-  ],
+  items: () => [],
 })
 
 const emit = defineEmits<{
@@ -106,27 +59,20 @@ function onItemClick(id: string) {
 <template>
   <section class="avanti-checklist">
     <div class="avanti-checklist__header">
-      <div class="avanti-checklist__heading">
-        <p class="avanti-checklist__eyebrow">{{ eyebrow }}</p>
-        <h2 class="avanti-checklist__title">{{ title }}</h2>
-      </div>
-
-      <button
-        class="avanti-checklist__toggle"
-        type="button"
-        :aria-expanded="isExpanded"
-        aria-label="Toggle checklist"
-        @click="onToggle"
-      >
-        <img
-          class="avanti-checklist__toggle-icon"
-          :class="{ 'avanti-checklist__toggle-icon--collapsed': !isExpanded }"
-          :src="iconChevron"
-          alt=""
-          width="14"
-          height="14"
-        />
-      </button>
+      <AvantiSectionHeader :eyebrow="eyebrow" :title="title" :title-tag="'p'">
+        <template #right>
+          <button
+            class="avanti-checklist__toggle"
+            type="button"
+            :aria-expanded="isExpanded"
+            aria-label="Toggle checklist"
+            :class="{ 'avanti-checklist__toggle--collapsed': !isExpanded }"
+            @click="onToggle"
+          >
+            <AvantiIcon :src="iconChevron" size="sm" />
+          </button>
+        </template>
+      </AvantiSectionHeader>
     </div>
 
     <template v-if="isExpanded">
@@ -180,32 +126,6 @@ function onItemClick(id: string) {
   padding: calc(var(--avanti-modul) * 2);
 }
 
-.avanti-checklist__heading {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  gap: calc(var(--avanti-modul) * 0.5);
-  min-width: 0;
-}
-
-.avanti-checklist__eyebrow {
-  margin: 0;
-  color: var(--avanti-teal);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.034375rem;
-  line-height: normal;
-  text-transform: uppercase;
-}
-
-.avanti-checklist__title {
-  margin: 0;
-  color: var(--avanti-ink);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  line-height: normal;
-}
-
 .avanti-checklist__toggle {
   display: flex;
   flex-shrink: 0;
@@ -219,13 +139,11 @@ function onItemClick(id: string) {
   cursor: pointer;
 }
 
-.avanti-checklist__toggle-icon {
-  width: 14px;
-  height: 14px;
+.avanti-checklist__toggle :deep(.avanti-icon) {
   transition: transform 0.2s ease;
 }
 
-.avanti-checklist__toggle-icon--collapsed {
+.avanti-checklist__toggle--collapsed :deep(.avanti-icon) {
   transform: rotate(180deg);
 }
 
@@ -276,7 +194,8 @@ function onItemClick(id: string) {
     border-radius: 5px;
   }
 
-  .avanti-checklist__toggle-icon {
+  .avanti-checklist__toggle :deep(.avanti-icon),
+  .avanti-checklist__toggle :deep(.avanti-icon img) {
     width: 9px;
     height: 9px;
   }

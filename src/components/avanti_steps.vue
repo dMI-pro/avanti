@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import iconCheck from '@/assets/icons/step-check.svg'
-import iconUpload from '@/assets/icons/step-upload.svg'
-import iconSign from '@/assets/icons/step-sign.svg'
 import AvantiStep from '@/components/avanti_step.vue'
+import AvantiSectionHeader from '@/components/avanti_section_header.vue'
 import type { ProgressStatus } from '@/types'
 
 type StepItem = {
   label: string
   status: ProgressStatus
+  iconSrc: string
 }
 
 type Props = {
@@ -17,28 +16,15 @@ type Props = {
   steps?: StepItem[]
 }
 
-const STATUS_ICONS: Record<ProgressStatus, string> = {
-  done: iconCheck,
-  current: iconUpload,
-  pending: iconSign,
-}
-
 const props = withDefaults(defineProps<Props>(), {
-  title: 'Passo 4 di 5',
-  counter: '3 / 5 completati',
-  steps: () => [
-    { label: 'Simul.', status: 'done' },
-    { label: 'Approv.', status: 'done' },
-    { label: 'Account', status: 'done' },
-    { label: 'Docum.', status: 'current' },
-    { label: 'Firma', status: 'pending' },
-  ],
+  title: '',
+  counter: '',
+  steps: () => [],
 })
 
 const trackSteps = computed(() =>
   props.steps.map((step, index) => ({
     ...step,
-    iconSrc: STATUS_ICONS[step.status],
     showLineAfter: index < props.steps.length - 1,
     lineAfterActive: step.status === 'done',
   })),
@@ -47,10 +33,11 @@ const trackSteps = computed(() =>
 
 <template>
   <section class="avanti-steps">
-    <div class="avanti-steps__header">
-      <h2 class="avanti-steps__title">{{ title }}</h2>
-      <p class="avanti-steps__counter">{{ counter }}</p>
-    </div>
+    <AvantiSectionHeader :title="title" :title-tag="'h2'">
+      <template #right>
+        <p class="avanti-steps__counter">{{ counter }}</p>
+      </template>
+    </AvantiSectionHeader>
 
     <ol class="avanti-steps__track">
       <AvantiStep
@@ -79,22 +66,6 @@ const trackSteps = computed(() =>
   box-shadow: var(--avanti-shadow-card);
 }
 
-.avanti-steps__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: calc(var(--avanti-modul) * 1.5);
-  width: 100%;
-}
-
-.avanti-steps__title {
-  margin: 0;
-  color: var(--avanti-ink);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  line-height: normal;
-}
-
 .avanti-steps__counter {
   margin: 0;
   color: var(--avanti-muted);
@@ -113,13 +84,12 @@ const trackSteps = computed(() =>
   list-style: none;
 }
 
-@media (max-width: 1024px) {
+  @media (max-width: 1024px) {
   .avanti-steps {
     gap: calc(var(--avanti-modul) * 1.5);
     padding: calc(var(--avanti-modul) * 2);
   }
 
-  .avanti-steps__title,
   .avanti-steps__counter {
     font-size: 0.625rem;
   }

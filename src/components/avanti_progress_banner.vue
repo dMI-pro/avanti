@@ -21,14 +21,11 @@ type Props = {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  title: 'Per il prelievo dei fondi, completa tutti gli step',
-  subtitle: 'Step ancora da completare',
-  badge: '3 / 5 Completati',
-  mobileBadge: '3 / 5',
-  checks: () => [
-    { id: 'documenti', label: 'Documenti', checked: false },
-    { id: 'firma', label: 'Firma', checked: false },
-  ],
+  title: '',
+  subtitle: '',
+  badge: '',
+  mobileBadge: '',
+  checks: () => [],
 })
 
 const emit = defineEmits<{

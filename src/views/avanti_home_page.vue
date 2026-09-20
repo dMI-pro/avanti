@@ -11,6 +11,13 @@ import AvantiBalanceCard from '@/components/avanti_balance_card.vue'
 import AvantiProgressBanner from '@/components/avanti_progress_banner.vue'
 import AvantiPersonalData from '@/components/avanti_personal_data.vue'
 import AvantiChecklist from '@/components/avanti_checklist.vue'
+import {
+  balanceCardMock,
+  stepsMock,
+  checklistMock,
+  progressBannerMock,
+  personalDataMock,
+} from '@/mocks/home'
 import type { NavId } from '@/types'
 
 function onNavigate(_id: NavId) {}
@@ -47,12 +54,12 @@ function onMessages() {}
       </div>
       <AvantiHomeLayout>
         <template #left>
-          <AvantiSteps />
-          <AvantiBalanceCard />
-          <AvantiProgressBanner />
+          <AvantiSteps v-bind="stepsMock" />
+          <AvantiBalanceCard v-bind="balanceCardMock" />
+          <AvantiProgressBanner v-bind="progressBannerMock" />
         </template>
-        <template #right-top><AvantiPersonalData /></template>
-        <template #right-bottom><AvantiChecklist /></template>
+        <template #right-top><AvantiPersonalData v-bind="personalDataMock" /></template>
+        <template #right-bottom><AvantiChecklist v-bind="checklistMock" /></template>
       </AvantiHomeLayout>
     </main>
     <AvantiMobileMessagesList :avatar-src="avatarSupport" :badge="2" @click="onMessages" />
