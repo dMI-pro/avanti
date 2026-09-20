@@ -11,7 +11,32 @@ import iconArrowRightGradient from '@/assets/icons/icon-arrow-right-gradient.svg
 import iconCheck from '@/assets/icons/step-check.svg'
 import iconUploadStep from '@/assets/icons/step-upload.svg'
 import iconSign from '@/assets/icons/step-sign.svg'
-import type { ProgressStatus } from '@/types'
+import avatarUser from '@/assets/images/avatar-user.jpeg'
+import avatarSupport from '@/assets/images/avatar-support.png'
+import type { NavId, ProgressStatus } from '@/types'
+
+export type HeaderMock = {
+  avatarSrc: string
+  userName: string
+  userInitials: string
+  activeNav?: NavId
+  assistenzaBadge?: number
+  notificationBadge?: number
+}
+
+export type PageToolbarMock = {
+  userName: string
+  userEmail: string
+  avatarSrc: string
+  breadcrumbRoot: string
+  breadcrumbCurrent: string
+}
+
+export type MobileMessagesMock = {
+  avatarSrc: string
+  badge?: number | string
+  label?: string
+}
 
 export type BalanceCardMock = {
   title?: string
@@ -176,4 +201,27 @@ export const personalDataMock: PersonalDataMock = {
     { label: 'Cognome', value: 'Intesa Sanpaolo S.p.A.' },
     { label: 'Nome', value: 'Marco Rossi' },
   ],
+}
+
+export const headerMock: HeaderMock = {
+  avatarSrc: avatarUser,
+  userName: 'Marco Rossi',
+  userInitials: 'MR',
+  activeNav: 'home',
+  assistenzaBadge: 4,
+  notificationBadge: 4,
+}
+
+export const pageToolbarMock: PageToolbarMock = {
+  userName: 'Marco Rossi',
+  userEmail: 'ikoei@09gmail.com',
+  avatarSrc: avatarUser,
+  breadcrumbRoot: 'Piattaforma',
+  breadcrumbCurrent: 'Home',
+}
+
+export const mobileMessagesMock: MobileMessagesMock = {
+  avatarSrc: avatarSupport,
+  badge: 2,
+  label: 'Messaggi',
 }

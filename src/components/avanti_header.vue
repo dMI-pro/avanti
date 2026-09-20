@@ -19,10 +19,10 @@ type Props = {
 
 const props = withDefaults(defineProps<Props>(), {
   activeNav: 'home',
-  assistenzaBadge: 4,
-  notificationBadge: 4,
+  assistenzaBadge: 0,
+  notificationBadge: 0,
   avatarSrc: '',
-  userInitials: 'MR',
+  userInitials: '',
   userName: '',
 })
 

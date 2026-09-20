@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import avatarUser from '@/assets/images/avatar-user.jpeg'
-import avatarSupport from '@/assets/images/avatar-support.png'
 import AvantiHeader from '@/components/avanti_header.vue'
 import AvantiPageToolbar from '@/components/avanti_page_toolbar.vue'
 import AvantiHomeLayout from '@/components/avanti_home_layout.vue'
@@ -17,26 +15,47 @@ import {
   checklistMock,
   progressBannerMock,
   personalDataMock,
+  headerMock,
+  pageToolbarMock,
+  mobileMessagesMock,
 } from '@/mocks/home'
 import type { NavId } from '@/types'
 
-function onNavigate(_id: NavId) {}
+function onNavigate(_id: NavId) {
+  if (import.meta.env.DEV) {
+    console.warn('[AvantiHomePage] onNavigate handler called but not implemented')
+  }
+}
 
-function onAssistenza() {}
+function onAssistenza() {
+  if (import.meta.env.DEV) {
+    console.warn('[AvantiHomePage] onAssistenza handler called but not implemented')
+  }
+}
 
-function onNotifications() {}
+function onNotifications() {
+  if (import.meta.env.DEV) {
+    console.warn('[AvantiHomePage] onNotifications handler called but not implemented')
+  }
+}
 
-function onProfile() {}
+function onProfile() {
+  if (import.meta.env.DEV) {
+    console.warn('[AvantiHomePage] onProfile handler called but not implemented')
+  }
+}
 
-function onMessages() {}
+function onMessages() {
+  if (import.meta.env.DEV) {
+    console.warn('[AvantiHomePage] onMessages handler called but not implemented')
+  }
+}
 </script>
 
 <template>
   <div class="avanti-home-page">
     <AvantiHeader
-      :avatar-src="avatarUser"
-      user-name="Marco Rossi"
-      user-initials="MR"
+      v-bind="headerMock"
       @navigate="onNavigate"
       @assistenza="onAssistenza"
       @notifications="onNotifications"
@@ -44,13 +63,7 @@ function onMessages() {}
     />
     <main class="avanti-home-page__main">
       <div class="avanti-home-page__toolbar">
-        <AvantiPageToolbar
-          user-name="Marco Rossi"
-          user-email="ikoei@09gmail.com"
-          :avatar-src="avatarUser"
-          breadcrumb-root="Piattaforma"
-          breadcrumb-current="Home"
-        />
+        <AvantiPageToolbar v-bind="pageToolbarMock" />
       </div>
       <AvantiHomeLayout>
         <template #left>
@@ -62,7 +75,7 @@ function onMessages() {}
         <template #right-bottom><AvantiChecklist v-bind="checklistMock" /></template>
       </AvantiHomeLayout>
     </main>
-    <AvantiMobileMessagesList :avatar-src="avatarSupport" :badge="2" @click="onMessages" />
+    <AvantiMobileMessagesList v-bind="mobileMessagesMock" @click="onMessages" />
     <AvantiMobileFooter active-nav="home" @navigate="onNavigate" @assistenza="onAssistenza" />
   </div>
 </template>

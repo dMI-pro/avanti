@@ -9,8 +9,8 @@ type Props = {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  badge: 2,
-  label: 'Messaggi',
+  badge: 0,
+  label: '',
 })
 
 const emit = defineEmits<{
