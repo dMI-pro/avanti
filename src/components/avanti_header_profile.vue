@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import AvantiAvatar from '@/components/avanti_avatar.vue'
+
 type Props = {
   initials: string
   avatarSrc: string
@@ -25,12 +27,11 @@ function onClick() {
     :aria-label="name || initials"
     @click="onClick"
   >
-    <img
-      class="avanti-header-profile__avatar"
+    <AvantiAvatar
       :src="avatarSrc"
       :alt="name || initials"
-      width="32"
-      height="32"
+      size="md"
+      with-border
     />
     <span class="avanti-header-profile__initials">{{ initials }}</span>
   </button>
@@ -47,15 +48,6 @@ function onClick() {
   border: none;
   background: transparent;
   cursor: pointer;
-}
-
-.avanti-header-profile__avatar {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  border: 1px solid var(--avanti-teal);
-  border-radius: 16px;
-  object-fit: cover;
 }
 
 .avanti-header-profile__initials {

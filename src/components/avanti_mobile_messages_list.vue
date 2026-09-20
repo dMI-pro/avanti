@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AvantiBadge from '@/components/avanti_badge.vue'
+import AvantiAvatar from '@/components/avanti_avatar.vue'
 
 type Props = {
   avatarSrc: string
@@ -29,12 +30,12 @@ function onClick() {
       :aria-label="label"
       @click="onClick"
     >
-      <img
+      <AvantiAvatar
         class="avanti-mobile-messages-list__avatar"
         :src="avatarSrc"
         alt=""
-        width="57"
-        height="57"
+        :width="57"
+        :height="57"
       />
       <AvantiBadge
         variant="count"
@@ -81,11 +82,8 @@ function onClick() {
   }
 
   .avanti-mobile-messages-list__avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: var(--avanti-radius-circle);
-    object-fit: cover;
-    pointer-events: none;
+    width: 100% !important;
+    height: 100% !important;
   }
 }
 

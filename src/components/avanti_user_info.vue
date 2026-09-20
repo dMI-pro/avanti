@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import AvantiAvatar from '@/components/avanti_avatar.vue'
+
 type Props = {
   name: string
   email: string
@@ -10,12 +12,10 @@ defineProps<Props>()
 
 <template>
   <div class="avanti-user-info">
-    <img
-      class="avanti-user-info__avatar"
+    <AvantiAvatar
       :src="avatarSrc"
       :alt="name"
-      width="40"
-      height="40"
+      size="lg"
     />
     <div class="avanti-user-info__text">
       <p class="avanti-user-info__name">{{ name }}</p>
@@ -29,14 +29,6 @@ defineProps<Props>()
   display: flex;
   align-items: center;
   gap: calc(var(--avanti-modul) * 1.5);
-}
-
-.avanti-user-info__avatar {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  border-radius: 20px;
-  object-fit: cover;
 }
 
 .avanti-user-info__text {
