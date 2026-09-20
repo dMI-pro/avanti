@@ -13,6 +13,10 @@ type ChecklistItem = {
   status: ProgressStatus
   iconSrc: string
   actionIconSrc: string
+  iconOffsetX?: string | number
+  iconOffsetY?: string | number
+  actionIconOffsetX?: string | number
+  actionIconOffsetY?: string | number
 }
 
 type Props = {
@@ -87,6 +91,10 @@ function onItemClick(id: string) {
             :status="item.status"
             :icon-src="item.iconSrc"
             :action-icon-src="item.actionIconSrc"
+            :icon-offset-x="item.iconOffsetX"
+            :icon-offset-y="item.iconOffsetY"
+            :action-icon-offset-x="item.actionIconOffsetX"
+            :action-icon-offset-y="item.actionIconOffsetY"
             @click="onItemClick(item.id)"
           />
         </template>
@@ -194,7 +202,6 @@ function onItemClick(id: string) {
     border-radius: 5px;
   }
 
-  .avanti-checklist__toggle :deep(.avanti-icon),
   .avanti-checklist__toggle :deep(.avanti-icon img) {
     width: 9px;
     height: 9px;

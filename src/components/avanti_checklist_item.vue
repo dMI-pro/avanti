@@ -8,6 +8,10 @@ type Props = {
   status: ProgressStatus
   iconSrc: string
   actionIconSrc: string
+  iconOffsetX?: string | number
+  iconOffsetY?: string | number
+  actionIconOffsetX?: string | number
+  actionIconOffsetY?: string | number
 }
 
 defineProps<Props>()
@@ -28,21 +32,27 @@ function onClick() {
     type="button"
     @click="onClick"
   >
-    <AvantiIcon
-      class="avanti-checklist-item__icon"
-      :src="iconSrc"
-      size="lg"
-    />
+    <span class="avanti-checklist-item__icon" aria-hidden="true">
+      <AvantiIcon
+        :src="iconSrc"
+        size="lg"
+        :offset-x="iconOffsetX"
+        :offset-y="iconOffsetY"
+      />
+    </span>
     <span class="avanti-checklist-item__text">
       <span class="avanti-checklist-item__title">{{ title }}</span>
       <span class="avanti-checklist-item__status">{{ statusText }}</span>
     </span>
-    <AvantiIcon
-      class="avanti-checklist-item__action"
-      :src="actionIconSrc"
-      :width="13"
-      :height="13"
-    />
+    <span class="avanti-checklist-item__action" aria-hidden="true">
+      <AvantiIcon
+        :src="actionIconSrc"
+        :width="13"
+        :height="13"
+        :offset-x="actionIconOffsetX"
+        :offset-y="actionIconOffsetY"
+      />
+    </span>
   </button>
 
   <div
@@ -50,21 +60,27 @@ function onClick() {
     class="avanti-checklist-item"
     :class="`avanti-checklist-item--${status}`"
   >
-    <AvantiIcon
-      class="avanti-checklist-item__icon"
-      :src="iconSrc"
-      size="lg"
-    />
+    <span class="avanti-checklist-item__icon" aria-hidden="true">
+      <AvantiIcon
+        :src="iconSrc"
+        size="lg"
+        :offset-x="iconOffsetX"
+        :offset-y="iconOffsetY"
+      />
+    </span>
     <span class="avanti-checklist-item__text">
       <span class="avanti-checklist-item__title">{{ title }}</span>
       <span class="avanti-checklist-item__status">{{ statusText }}</span>
     </span>
-    <AvantiIcon
-      class="avanti-checklist-item__action"
-      :src="actionIconSrc"
-      :width="13"
-      :height="13"
-    />
+    <span class="avanti-checklist-item__action" aria-hidden="true">
+      <AvantiIcon
+        :src="actionIconSrc"
+        :width="13"
+        :height="13"
+        :offset-x="actionIconOffsetX"
+        :offset-y="actionIconOffsetY"
+      />
+    </span>
   </div>
 </template>
 
@@ -92,6 +108,10 @@ button.avanti-checklist-item {
   width: 44px;
   height: 44px;
   border-radius: 22px;
+}
+
+.avanti-checklist-item__icon :deep(.avanti-icon) {
+  display: flex;
 }
 
 .avanti-checklist-item__text {
@@ -174,8 +194,7 @@ button.avanti-checklist-item {
     border-radius: 18px;
   }
 
-  .avanti-checklist-item__icon,
-  :deep(.avanti-checklist-item__icon img) {
+  .avanti-checklist-item__icon :deep(.avanti-icon) {
     width: 16px;
     height: 16px;
   }
@@ -198,8 +217,7 @@ button.avanti-checklist-item {
     border-radius: 11px;
   }
 
-  .avanti-checklist-item--done .avanti-checklist-item__action,
-  .avanti-checklist-item--done :deep(.avanti-checklist-item__action img) {
+  .avanti-checklist-item--done .avanti-checklist-item__action :deep(.avanti-icon) {
     width: 10px;
     height: 10px;
   }

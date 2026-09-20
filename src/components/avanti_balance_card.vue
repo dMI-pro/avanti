@@ -261,8 +261,7 @@ function onCtaClick() {
     gap: calc(var(--avanti-modul) * 1.5);
   }
 
-  .avanti-balance-card__cta-icon,
-  :deep(.avanti-balance-card__cta-icon img) {
+  .avanti-balance-card__cta-icon {
     width: 20px;
     height: 20px;
   }

@@ -39,6 +39,10 @@ export type ChecklistItemMock = {
   status: ProgressStatus
   iconSrc: string
   actionIconSrc: string
+  iconOffsetX?: string | number
+  iconOffsetY?: string | number
+  actionIconOffsetX?: string | number
+  actionIconOffsetY?: string | number
 }
 
 export type ChecklistMock = {
@@ -136,6 +140,7 @@ export const checklistMock: ChecklistMock = {
       status: 'current',
       iconSrc: iconUpload,
       actionIconSrc: iconArrowCircle,
+      actionIconOffsetX: -7,
     },
     {
       id: 'contratto',

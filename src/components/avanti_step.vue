@@ -120,8 +120,7 @@ const rootClass = computed(() => [
     border-radius: 10px;
   }
 
-  .avanti-step__icon,
-  :deep(.avanti-step__icon img) {
+  :deep(.avanti-step__icon) {
     width: 12px;
     height: 12px;
   }

@@ -8,6 +8,8 @@ type Props = {
   size?: IconSize
   width?: string | number
   height?: string | number
+  offsetX?: string | number
+  offsetY?: string | number
   alt?: string
 }
 
@@ -21,13 +23,6 @@ const rootClass = computed(() => [
   `avanti-icon--size-${props.size}`,
 ])
 
-const sizeInPx: Record<IconSize, string> = {
-  sm: '14px',
-  md: '16px',
-  lg: '20px',
-  xl: '28px',
-}
-
 const rootStyle = computed<Record<string, string>>(() => {
   const style: Record<string, string> = {}
   if (props.width !== undefined) {
@@ -39,20 +34,24 @@ const rootStyle = computed<Record<string, string>>(() => {
   return style
 })
 
-const fallbackSize = computed(() => {
-  const w = props.width !== undefined
-    ? typeof props.width === 'number' ? `${props.width}px` : props.width
-    : sizeInPx[props.size]
-  const h = props.height !== undefined
-    ? typeof props.height === 'number' ? `${props.height}px` : props.height
-    : sizeInPx[props.size]
-  return { w, h }
+function toLength(v: string | number | undefined): string | null {
+  if (v === undefined) return null
+  return typeof v === 'number' ? `${v}px` : v
+}
+
+const imgStyle = computed<Record<string, string>>(() => {
+  const style: Record<string, string> = {}
+  const x = toLength(props.offsetX) ?? '0'
+  const y = toLength(props.offsetY) ?? '0'
+  if (x !== '0' || y !== '0') {
+    style.transform = `translate(${x}, ${y})`
+  }
+  return style
 })
 </script>
 
 <template>
   <span
-    class="avanti-icon"
     :class="rootClass"
     :style="rootStyle"
     aria-hidden="true"
@@ -60,8 +59,7 @@ const fallbackSize = computed(() => {
     <img
       :src="src"
       :alt="alt"
-      :width="fallbackSize.w"
-      :height="fallbackSize.h"
+      :style="imgStyle"
     />
   </span>
 </template>
@@ -72,20 +70,16 @@ const fallbackSize = computed(() => {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  line-height: 0;
 }
 
 .avanti-icon img {
   display: block;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 
 .avanti-icon--size-sm {
-  width: 14px;
-  height: 14px;
-}
-
-.avanti-icon--size-sm img {
   width: 14px;
   height: 14px;
 }
@@ -95,27 +89,12 @@ const fallbackSize = computed(() => {
   height: 16px;
 }
 
-.avanti-icon--size-md img {
-  width: 16px;
-  height: 16px;
-}
-
 .avanti-icon--size-lg {
   width: 20px;
   height: 20px;
 }
 
-.avanti-icon--size-lg img {
-  width: 20px;
-  height: 20px;
-}
-
 .avanti-icon--size-xl {
-  width: 28px;
-  height: 28px;
-}
-
-.avanti-icon--size-xl img {
   width: 28px;
   height: 28px;
 }

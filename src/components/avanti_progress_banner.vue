@@ -235,9 +235,7 @@ function onCheckChange(id: string, checked: boolean) {
     box-shadow: none;
   }
 
-  .avanti-progress-banner__icon,
-  :deep(.avanti-progress-banner__icon .avanti-icon),
-  :deep(.avanti-progress-banner__icon .avanti-icon img) {
+  .avanti-progress-banner__icon :deep(.avanti-icon) {
     width: 14px;
     height: 14px;
   }
